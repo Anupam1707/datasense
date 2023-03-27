@@ -1,15 +1,26 @@
+import os
+import time
+from random import *
+import json
+try :
+    import pyttsx3
+    import speech_recognition as sr
+    import datetime
+    import wikipedia
+    import pyautogui as pg
+    import requests
+    from newsapi import NewsApiClient
+    import pyjokes
+except ImportError:
+    os.system("pip install pyttsx3 SpeechRecognition datetime wikipedia pyautogui requests newsapi-python pyjokes
 import pyttsx3
 import speech_recognition as sr
 import datetime
 import wikipedia
-import os
 import pyautogui as pg
-import time
 import requests
-import json
 from newsapi import NewsApiClient
 import pyjokes
-from random import *
 
 state = "a"
 
