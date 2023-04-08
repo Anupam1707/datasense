@@ -60,13 +60,13 @@ def takeCommand():
         
     return query
 
-with sr.Microphone() as source:
-        print("Listening........")
-        voice = r.listen(source)
-        speech_data = r.recognize_google(voice)
-   
-    # Returns the string of the recognized voice
-    return speech_data
+##with sr.Microphone() as source:
+##        print("Listening........")
+##        voice = r.listen(source)
+##        speech_data = r.recognize_google(voice)
+##   
+##    # Returns the string of the recognized voice
+##    return speech_data
 
 def out():
     speak("Which of the user account you want to logout")
@@ -206,22 +206,20 @@ def main():
         speak(state)
         query = takeCommand()
         
-        if 'wikipedia' in query:
-            #1 Wikipedia Search
-            speak('Searching wikipedia')
-            query = query.replace("wikipedia", "")
-            results = wikipedia.summary(query, sentences =2)
-            speak(results)
-            state = b
-
-        elif 'search on youtube' in query:
+        if "search" in query or "tell me about" in query or "what is" in query:
+            try:
+                
+                speak(pywhatkit.info(query, lines=5)
+            except:
+                speak("An Unknown Error Occurred")
+                
+        elif 'play' in query:
             #2 Youtube Search
-            if 'play' in query:
-            song = str(t.lower()).replace('dbx play','')
-            talk("playing"+song)
-            pywhatkit.playonyt(song)
-            state = b
-            
+                song = str(query.lower()).replace('play','')
+                speak("playing"+song)
+                pywhatkit.playonyt(song)
+                state = b
+                
         elif 'time' in query:
             #4 Ask the Time
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
@@ -366,4 +364,3 @@ def main():
             state = b
 
 main()
-
