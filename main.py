@@ -170,316 +170,159 @@ def login():
         speak("Welcome Back" + " " + str(data[usr]))
 
 def features():
-
     speak("I can Help You With:")
-
     speak("Searching Across Wikipedia")
-
     speak("Searching Across Youtube")
-
     speak("Play Local Music")
-
     speak("Telling you the Current Time")
-
     speak("Fetching the weather of any city across the world")
-
     speak("Entertaining you with a joke")
-
     speak("Telling the complete top news across India")
-
     speak("Locating any place on the map")
-
     speak("Writing and Reading Notes")
-
     speak("And at last, searching across google")
 
-
-
 def main():
-
     a = "How can I help You?"
-
     b = "Do you have any other Query or Question"
-
     state = a
-
     login()
-
+    
     while True:
-
         speak(state)
-
         query = takeCommand()
-
         
-
         if 'wikipedia' in query:
-
             #1 Wikipedia Search
-
             speak('Searching wikipedia')
-
             query = query.replace("wikipedia", "")
-
             results = wikipedia.summary(query, sentences =2)
-
             speak(results)
-
             state = b
-
-
 
         elif 'search on youtube' in query:
-
             #2 Youtube Search
-
             query = query.replace("search on youtube", "")
-
             url = "https://www.youtube.com/results?search_query=" + str(query)
-
             pg.press('win')
-
             time.sleep(1)
-
             pg.write(url)
-
             time.sleep(0.75)
-
             pg.press('enter')
-
             state = b
-
-
 
         elif 'play music' in query:
-
             #3 It's Music Time
-
             songs_dir = "J:\Youtube\BGM's\YouTube Common Music"
-
             songs = os.listdir(songs_dir)
-
             print(songs)
-
             os.startfile(os.path.join(songs_dir, songs[0]))
-
             state = b
-
-
 
         elif 'time' in query:
-
             #4 Ask the Time
-
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
-
             speak(f"The time is {strTime}")
-
             state = b
-
-
 
         elif "what's the weather of" in query or "what is the weather of" in query:
-
             #5 Ask Weather
-
             query = query.replace("what's the weather of", "")
-
             print(query)
-
             api_key = "141f5109c5c29634665af4a4a59e95a6"
-
-    
-
+            
             weather_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&appid='+api_key
 
-    
-
             response = requests.get(weather_url)
-
-    
-
+            
             weather_info = response.json()
-
-    
-
+            
             if weather_info['cod'] == 200:
-
                 kelvin = 273 
-
                 temp = int(weather_info['main']['temp'] - kelvin)
-
                 feels_like_temp = int(weather_info['main']['temp'])
-
                 pressure = weather_info['main']['pressure']
-
                 humidity = weather_info['main']['humidity']
-
                 cloudy = weather_info['clouds']['all']
-
                 description = weather_info['weather'][0]['description']
-
-        
-
-                
-
+                       
                 weather = f"Weather of: {query}\nTemperature (Celsius): {temp}°\nTemperature (Farenheit): {feels_like_temp}K\nPressure: {pressure} hPa\nHumidity: {humidity}%\nCloud: {cloudy}%\nWeather Info: {description}"
-
             else:
-
                 weather = f"\n\tWeather for '{query}' not found!\n\tKindly Enter valid City Name !!"
-
                 
-
             speak(weather)
-
             state = b
-
-        
 
         elif 'how are you' in query:
-
             #6
-
             speak("I am fine, Thank you")
-
             speak("How are you?")
-
             state = b
-
- 
 
         elif 'fine' in query or "good" in query:
-
             #6
-
             speak("It's good to know that you are fine")
-
             state = b
-
-
 
         elif 'news' in query:
-
             #7 Get Latest News
-
             newsapi = NewsApiClient(api_key='91df4271e2cc4fb5bde02842d91492da')
-
             top_headlines = newsapi.get_top_headlines(
-
                                         category='technology',
-
                                         language='en',
-
                                         country='in')
-
-            
-
             speak(top_headlines)
-
             state = b
-
-
 
         elif 'joke' in query:
-
             #8 Enjoy Joke
-
             speak(pyjokes.get_joke())
-
             state = b
-
-
 
         elif "who made you" in query or "who created you" in query or "who designed you" in query:
-
             #9
-
             speak("I have been created by Anupam Kanoongo")
-
             state = b
-
-
 
         elif "who i am" in query:
-
             #10
-
             speak("If you talk then definitely your human.")
-
             state = b
-
-
 
         elif "don't listen" in query or "stop listening" in query or "take a break" in query or "wait" in query:
-
             #11
-
             speak("In Seconds : for how much time you want to stop the assistant from listening commands?")
-
             a = int(takeCommand())
-
             time.sleep(a)
-
             state = a
 
-
-
         elif "where is" in query:
-
             #12 GPS
-
             query = query.replace("where is", "")
-
             location = query
-
             speak("You asked to Locate")
-
             speak(location)
-
             url = "https://www.google.nl/maps/place/"+location
-
             pg.press('win')
-
             time.sleep(1)
-
             pg.write(url)
-
             time.sleep(0.75)
-
             pg.press('enter')
-
             state = b
-
-
 
         elif "locate" in query:
-
             #12 GPS
-
             query = query.replace("locate", "")
-
             location = query
-
             speak("You asked to Locate")
-
             speak(location)
-
             url = "https://www.google.nl/maps/place/"+location
-
             pg.press('win')
-
             time.sleep(1)
-
             pg.write(url)
-
             time.sleep(0.75)
-
             pg.press('enter')
-
             state = b
-
-
 
         elif "write a note" in query:
 
