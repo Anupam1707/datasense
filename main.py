@@ -2,7 +2,9 @@ import os
 import time
 from random import *
 import json
+
 try :
+    
     import pyttsx3
     import speech_recognition as sr
     import datetime
@@ -11,8 +13,10 @@ try :
     import requests
     from newsapi import NewsApiClient
     import pyjokes
+    
 except ImportError:
     os.system("pip install pyttsx3 SpeechRecognition datetime wikipedia pyautogui requests newsapi-python pyjokes")
+    
 import pyttsx3
 import speech_recognition as sr
 import datetime
