@@ -9,18 +9,20 @@ try :
     import datetime
     import wikipedia
     import pyautogui as pg
+    import pywhatkit
     import requests
     from newsapi import NewsApiClient
     import pyjokes
     
 except ImportError:
-    os.system("pip install pyttsx3 SpeechRecognition datetime wikipedia pyautogui requests newsapi-python pyjokes")
+    os.system("pip install pyttsx3 SpeechRecognition datetime wikipedia pyautogui pywhatkit requests newsapi-python pyjokes")
     
 import pyttsx3
 import speech_recognition as sr
 import datetime
 import wikipedia
 import pyautogui as pg
+import pywhatkit
 import requests
 from newsapi import NewsApiClient
 import pyjokes
