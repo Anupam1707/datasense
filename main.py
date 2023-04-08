@@ -4,7 +4,6 @@ from random import *
 import json
 
 try :
-    
     import pyttsx3
     import speech_recognition as sr
     import datetime
@@ -44,6 +43,7 @@ speak("As soon as I ask you any question please wait until I say 'Listening'")
 def takeCommand():
     query = ""
     r = sr.Recognizer()
+    
     with sr.Microphone() as source:
         speak("Listening")
         audio = r.listen(source)
