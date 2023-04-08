@@ -60,6 +60,14 @@ def takeCommand():
         
     return query
 
+with sr.Microphone() as source:
+        print("Listening........")
+        voice = r.listen(source)
+        speech_data = r.recognize_google(voice)
+   
+    # Returns the string of the recognized voice
+    return speech_data
+
 def out():
     speak("Which of the user account you want to logout")
     query = takeCommand()
