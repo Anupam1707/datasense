@@ -325,80 +325,42 @@ def main():
             state = b
 
         elif "write a note" in query:
-
             #13 Notes
-
             speak("What should i write?")
-
             query = takeCommand()
-
-            file = open('jarvis.txt', 'w')
-
+            file = open('Note.txt', 'w')
             file.write(query)
-
             state = b
-
-         
 
         elif "show note" in query:
-
             #13 Notes
-
             speak("Showing Notes")
-
             file = open("note.txt", "r")
-
             speak(file.read())
-
             state = b
-
-
-
+            
         elif 'exit' in query:
-
             #14 Exit
-
             speak("Thanks for giving me your time")
-
             exit()
 
-
-
         elif 'what can you do' in query or "how can you help" in query:
-
             #15 Features
-
             features()
 
-
-
         elif "logout" in query or "log out" in query or "signout" in query or "sign out" in query:
-
             out()
 
-
-
         else:
-
             #16 Search on google
-
             url = "https://www.google.co.in/search?q=" + str(query)
-
             pg.press('win')
-
             time.sleep(1)
-
             pg.write(url)
-
             time.sleep(0.75)
-
             pg.press('enter')
-
             time.sleep(5)
-
             state = b
-
-
 
 main()
 
