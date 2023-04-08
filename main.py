@@ -208,23 +208,12 @@ def main():
 
         elif 'search on youtube' in query:
             #2 Youtube Search
-            query = query.replace("search on youtube", "")
-            url = "https://www.youtube.com/results?search_query=" + str(query)
-            pg.press('win')
-            time.sleep(1)
-            pg.write(url)
-            time.sleep(0.75)
-            pg.press('enter')
+            if 'play' in query:
+            song = str(t.lower()).replace('dbx play','')
+            talk("playing"+song)
+            pywhatkit.playonyt(song)
             state = b
-
-        elif 'play music' in query:
-            #3 It's Music Time
-            songs_dir = "J:\Youtube\BGM's\YouTube Common Music"
-            songs = os.listdir(songs_dir)
-            print(songs)
-            os.startfile(os.path.join(songs_dir, songs[0]))
-            state = b
-
+            
         elif 'time' in query:
             #4 Ask the Time
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
