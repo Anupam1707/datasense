@@ -1,4 +1,4 @@
-from tools import *
+from random import *
 
 def logout():
     speak("Which of the user account you want to logout")
