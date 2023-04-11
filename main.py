@@ -7,7 +7,6 @@ try :
     import pyttsx3
     import speech_recognition as sr
     import datetime
-    import wikipedia
     import pyautogui as pg
     import pywhatkit
     import requests
@@ -15,12 +14,11 @@ try :
     import pyjokes
     
 except ImportError:
-    os.system("pip install pyttsx3 SpeechRecognition datetime wikipedia pyautogui pywhatkit requests newsapi-python pyjokes")
+    os.system("pip install pyttsx3 SpeechRecognition datetime pyautogui pywhatkit requests newsapi-python pyjokes")
     
 import pyttsx3
 import speech_recognition as sr
 import datetime
-import wikipedia
 import pyautogui as pg
 import pywhatkit
 import requests
@@ -185,16 +183,14 @@ def login():
 
 def features():
     speak("I can Help You With:")
-    speak("Searching Across Wikipedia")
-    speak("Searching Across Youtube")
-    speak("Play Local Music")
+    speak("Playing Across Youtube")
     speak("Telling you the Current Time")
     speak("Fetching the weather of any city across the world")
     speak("Entertaining you with a joke")
     speak("Telling the complete top news across India")
     speak("Locating any place on the map")
     speak("Writing and Reading Notes")
-    speak("And at last, searching across google")
+    speak("And at last, searching across Internet")
 
 def main():
     a = "How can I help You?"
@@ -206,10 +202,15 @@ def main():
         speak(state)
         query = takeCommand()
         
-        if "search" in query or "tell me about" in query or "what is" in query:
+        if "search" in query  or "what is" in query:
             try:
+                speak(pywhatkit.info(query, lines=2))
+            except:
+                speak("An Unknown Error Occurred")
                 
-                speak(pywhatkit.info(query, lines=5)
+        elif "explain" in query  or "tell me about" in query:
+            try:
+                speak(pywhatkit.info(query, lines=10))
             except:
                 speak("An Unknown Error Occurred")
                 
