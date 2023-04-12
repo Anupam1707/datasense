@@ -24,6 +24,9 @@ from newsapi import NewsApiClient
 import pyjokes
 
 def caps():
+        a = "How can I help You?"
+        b = "Do you have any other Query or Question"
+        
         query = takeCommand()
         
         if "search" in query  or "what is" in query:
