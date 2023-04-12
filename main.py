@@ -25,7 +25,6 @@ def main():
     
     while True:
         speak(state)
-        query = takeCommand()
         caps()
         
 main()
