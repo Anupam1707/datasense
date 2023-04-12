@@ -1,3 +1,6 @@
+#Features of AI Assitant
+"""This contains all the features that can be performed by the AI Assistant"""
+
 import os
 import json
 import time
