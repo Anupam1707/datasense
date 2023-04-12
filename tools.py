@@ -13,13 +13,14 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
     
-##with sr.Microphone() as source:
+##def takeCommand():
+##    query = ""
+##    r = sr.Recognizer()
+##    with sr.Microphone() as source:
 ##        print("Listening........")
-##        voice = r.listen(source)
-##        speech_data = r.recognize_google(voice)
-##   
-##    # Returns the string of the recognized voice
-##    return speech_data
+##        audio = r.listen(source)
+##        query = r.recognize_google(voice)
+##        return query
 
 def takeCommand():
     query = ""
