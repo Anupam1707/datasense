@@ -24,6 +24,8 @@ from newsapi import NewsApiClient
 import pyjokes
 
 def caps():
+        query = takeCommand()
+        
         if "search" in query  or "what is" in query:
             try:
                 speak(pywhatkit.info(query, lines=2))
