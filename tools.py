@@ -3,6 +3,7 @@
 
 import pyttsx3
 import speech_recognition as sr
+import time
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -12,6 +13,7 @@ def speak(text):
     print(text)
     engine.say(text)
     engine.runAndWait()
+    time.sleep(2)
     
 ##def takeCommand():
 ##    query = ""
