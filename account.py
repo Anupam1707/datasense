@@ -1,34 +1,5 @@
 from random import *
 
-def logout():
-    speak("Which of the user account you want to logout")
-    query = takeCommand()
-
-    with open("Users.txt", "r") as o:
-        data = o.readlines()
-
-    for i in data:
-        if query + "\n" == i:
-            speak("Enter your password")
-            pwd = str(input("Password : "))
-            usr = data.index(i)
-        else :
-            speak("User Account not found")
-
-    with open("Passes.txt","r") as p:
-        data = p.readlines()
-
-    if data[usr] + "\n" == pwd:
-        with open("Status.txt","r") as r:
-            data = r.readlines()
-            
-        data[usr] = "Logged Out\n"
-
-        with open("Status.txt","w") as w:
-            w.writelines(data)
-            
-        exit()
-
 def login():
     usr = 1000
     pwd = ""
@@ -114,3 +85,34 @@ def login():
         with open("users.txt","r") as f:
             data = f.readlines()
         speak("Welcome Back" + " " + str(data[usr]))
+
+
+def logout():
+    speak("Which of the user account you want to logout")
+    query = takeCommand()
+
+    with open("Users.txt", "r") as o:
+        data = o.readlines()
+
+    for i in data:
+        if query + "\n" == i:
+            speak("Enter your password")
+            pwd = str(input("Password : "))
+            usr = data.index(i)
+        else :
+            speak("User Account not found")
+
+    with open("Passes.txt","r") as p:
+        data = p.readlines()
+
+    if data[usr] + "\n" == pwd:
+        with open("Status.txt","r") as r:
+            data = r.readlines()
+            
+        data[usr] = "Logged Out\n"
+
+        with open("Status.txt","w") as w:
+            w.writelines(data)
+            
+        exit()
+        
