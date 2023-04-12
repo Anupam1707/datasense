@@ -1,3 +1,6 @@
+#Fundamental Tools
+"""This file contains all the elememtary functions that are necessary for the AI Assistant"""
+
 import pyttsx3
 import speech_recognition as sr
 
