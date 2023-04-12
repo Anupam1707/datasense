@@ -1,3 +1,6 @@
+#Account Management
+"""This file handles all the account related tasks of AI Assistant"""
+
 from random import *
 
 def login():
