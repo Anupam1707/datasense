@@ -20,7 +20,7 @@ def login():
     if usr == "none":
         speak("Currently no user is logged in.")
         speak("What would you like to do, login or signup?")
-        query = str(input("IN : "))
+        query = takeCommand()
 
         if "signup" in query or "sign up" in query:
             speak("Can I know your name please?")
