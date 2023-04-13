@@ -34,6 +34,8 @@ def caps():
                 speak(pywhatkit.info(query, lines=2))
             except:
                 speak("An Unknown Error Occurred")
+            state = b
+            time.sleep(2)
                 
         elif "explain" in query  or "tell me about" in query:
             try:
@@ -47,6 +49,7 @@ def caps():
                 speak("playing"+song)
                 pywhatkit.playonyt(song)
                 state = b
+                time.sleep(2)
                 
         elif 'time' in query:
             #4 Ask the Time
@@ -81,6 +84,7 @@ def caps():
                 
             speak(weather)
             state = b
+            time.sleep(2)
 
         elif 'how are you' in query:
             #6
@@ -102,6 +106,7 @@ def caps():
                                         country='in')
             speak(top_headlines)
             state = b
+            time.sleep(2)
 
         elif 'joke' in query:
             #8 Enjoy Joke
@@ -138,6 +143,7 @@ def caps():
             time.sleep(0.75)
             pg.press('enter')
             state = b
+            time.sleep(2)
 
         elif "locate" in query:
             #12 GPS
@@ -152,6 +158,7 @@ def caps():
             time.sleep(0.75)
             pg.press('enter')
             state = b
+            time.sleep(2)
 
         elif "write a note" in query:
             #13 Notes
@@ -176,7 +183,8 @@ def caps():
         elif 'what can you do' in query or "how can you help" in query:
             #15 Features
             features()
-
+            time.sleep(2)
+            
         elif "logout" in query or "log out" in query or "signout" in query or "sign out" in query:
             out()
 
@@ -190,3 +198,5 @@ def caps():
             pg.press('enter')
             time.sleep(5)
             state = b
+            time.sleep(2)
+            
