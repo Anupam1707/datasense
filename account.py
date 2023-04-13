@@ -36,8 +36,9 @@ def login():
             query = takeCommand()
 
             for i in len(rows):
-                if query == rows[i]["Username"]:
+                if rows[i]["Username"] == query:
                         usr = i
+                        break
                 else:
                         usr = -1
 
