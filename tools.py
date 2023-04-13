@@ -13,7 +13,7 @@ def speak(text):
     print(text)
     engine.say(text)
     engine.runAndWait()
-    time.sleep(2)
+    time.sleep(1)
     
 ##def takeCommand():
 ##    query = ""
