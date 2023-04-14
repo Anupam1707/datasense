@@ -49,18 +49,30 @@ def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
     elif rowno == None and alldata != None and colno == None:
         data = sheetname.get_all_records()
 
+    
     return data
 
-##        
-##courses = list(data.keys())
-##values = list(data.values())
-##  
-##fig = plt.figure(figsize = (10, 5))
-## 
-##plt.bar(courses, values, color ='maroon',
-##        width = 0.4)
-## 
-##plt.xlabel("Food Items")
-##plt.ylabel("Number of Items Sold")
-##plt.title("Food Industry Sales")
-##plt.show()
+def avg(datalist):
+    return sum(datalist)/len(datalist)
+
+def total(datalist):
+    return sum(datalist)
+
+def dt(keys, values):
+    dt = {}
+    for key in keys:
+        for value in values:
+            dt[key] = value
+            values.remove(value)
+            break
+    return dt
+
+def plot(datadict):
+    paras = list(datadict.keys())
+    values = list(datadict.values())  
+    fig = plt.figure(figsize = (10, 5))
+    plt.bar(paras, values, color ='maroon',width = 0.4)
+    plt.xlabel("Parameters")
+    plt.ylabel("Values")
+    plt.title("Industry Sales")
+    plt.show()
