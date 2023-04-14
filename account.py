@@ -46,7 +46,7 @@ def login():
                     ps = input("Password : ")
 
                     if rows[usr]["Password"] == ps:
-                            speak("Welcome back",query)
+                            speak("Welcome back" + str(query))
                             worksheet.update_cell(usr+2,3,"IN")
                     else:
                             speak("Entered Password is Incorrect")
