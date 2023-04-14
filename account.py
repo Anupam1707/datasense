@@ -1,13 +1,10 @@
 #Account Management
 """This file handles all the account related tasks of AI Assistant"""
-
 from random import *
 
 def login():
     usr = 1000
     pwd = ""
-    ln = 0
-    idx = 0
     ps = ""
 
     for i in range(len(rows)):
@@ -20,11 +17,11 @@ def login():
     if usr == "none":
         speak("Currently no user is logged in.")
         speak("What would you like to do, login or signup?")
-        query = takeCommand()
+        query = str(input("IN : "))
 
         if "signup" in query or "sign up" in query:
             speak("Can I know your name please?")
-            query = takeCommand()
+            query = str(input("PWD : "))
             speak("Your Password is")
             pwd = query + str(randrange(1000,9999))
             speak(pwd)
@@ -33,10 +30,10 @@ def login():
             
         elif "login" in query:
             speak("Can I know your name please")
-            query = takeCommand()
+            query = str(input("NME : "))
 
-            for i in len(rows):
-                if rows[i]["Username"] == query:
+            for i in range(len(rows)):
+                if query == rows[i]["Username"]:
                         usr = i
                         break
                 else:
@@ -48,6 +45,7 @@ def login():
 
                     if rows[usr]["Password"] == ps:
                             speak("Welcome back",query)
+                            worksheet.update_cell(usr+2,3,"IN")
                     else:
                             speak("Entered Password is Incorrect")
                             
@@ -61,30 +59,20 @@ def login():
 
 def logout():
     speak("Which of the user account you want to logout")
-    query = takeCommand()
+    query = str(input("NME : "))
 
-    with open("Users.txt", "r") as o:
-        data = o.readlines()
-
-    for i in data:
-        if query + "\n" == i:
+    for i in range(len(rows)):
+        if query  == rows[i]["Username"]:
             speak("Enter your password")
             pwd = str(input("Password : "))
-            usr = data.index(i)
+            usr = i
+            break
         else :
             speak("User Account not found")
 
-    with open("Passes.txt","r") as p:
-        data = p.readlines()
-
-    if data[usr] + "\n" == pwd:
-        with open("Status.txt","r") as r:
-            data = r.readlines()
+    if rows[usr]["Password"]  == pwd:
             
-        data[usr] = "Logged Out\n"
-
-        with open("Status.txt","w") as w:
-            w.writelines(data)
-            
+        worksheet.update_cell(usr+2,3,"OUT")
+        
         exit()
         
