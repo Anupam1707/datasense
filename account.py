@@ -26,6 +26,8 @@ def login():
             pwd = query + str(randrange(1000,9999))
             speak(pwd)
             
+            usr = len(rows)+2
+            
             worksheet.update_cell(usr,1,query)
             worksheet.update_cell(usr,2,pwd)
             worksheet.update_cell(usr,3,"IN")
