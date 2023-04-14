@@ -17,11 +17,11 @@ def login():
     if usr == "none":
         speak("Currently no user is logged in.")
         speak("What would you like to do, login or signup?")
-        query = str(input("IN : "))
+        query = takeCommand()
 
         if "signup" in query or "sign up" in query:
             speak("Can I know your name please?")
-            query = str(input("PWD : "))
+            query = takeCommand()
             speak("Your Password is")
             pwd = query + str(randrange(1000,9999))
             speak(pwd)
@@ -30,7 +30,7 @@ def login():
             
         elif "login" in query:
             speak("Can I know your name please")
-            query = str(input("NME : "))
+            query = takeCommand()
 
             for i in range(len(rows)):
                 if query == rows[i]["Username"]:
@@ -59,7 +59,7 @@ def login():
 
 def logout():
     speak("Which of the user account you want to logout")
-    query = str(input("NME : "))
+    query = takeCommand()
 
     for i in range(len(rows)):
         if query  == rows[i]["Username"]:
