@@ -25,8 +25,10 @@ def login():
             speak("Your Password is")
             pwd = query + str(randrange(1000,9999))
             speak(pwd)
-
-            worksheet.insert_row([query,pwd,"IN"])
+            
+            worksheet.update_cell(usr,1,query)
+            worksheet.update_cell(usr,2,pwd)
+            worksheet.update_cell(usr,3,"IN")
             
         elif "login" in query:
             speak("Can I know your name please")
