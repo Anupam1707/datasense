@@ -1,3 +1,5 @@
+import numpy as np
+import matplotlib.pyplot as plt
 import requests
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -24,9 +26,41 @@ worksheet = spreadsheet.worksheet("Accounts")
 rows = worksheet.get_all_records()
 
 sales = spreadsheet.worksheet("Sales")
-sale = sales.get_all_records()
-
-reports = spreadsheet.worksheet("Reports")
-report = reports.get_all_records()
 
 os.remove("credentials.json")
+
+def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
+    if rowno == None and alldata == None and colno != None:
+        data = sheetname.col_values(colno)
+        data = data[1:]
+        try :
+            if type(float(data[0])) == float:
+                data = [ float(x) for x in data]
+        except ValueError:
+            pass
+            
+        
+    elif rowno != None and alldata == None and colno == None:
+        data = sheetname.row_values(rowno)
+        
+    elif rowno != None and alldata == None and colno != None:
+        data = sheetname.cell(rowno, colno).value
+        
+    elif rowno == None and alldata != None and colno == None:
+        data = sheetname.get_all_records()
+
+    return data
+
+##        
+##courses = list(data.keys())
+##values = list(data.values())
+##  
+##fig = plt.figure(figsize = (10, 5))
+## 
+##plt.bar(courses, values, color ='maroon',
+##        width = 0.4)
+## 
+##plt.xlabel("Food Items")
+##plt.ylabel("Number of Items Sold")
+##plt.title("Food Industry Sales")
+##plt.show()
