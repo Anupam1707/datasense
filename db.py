@@ -51,6 +51,16 @@ def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
 
     
     return data
+#constants
+id = 1
+date = 2
+region = 3
+city = 4
+category = 5
+product = 6
+quantity = 7
+unitprice = 8
+totalprice = 9
 
 def avg(datalist):
     return sum(datalist)/len(datalist)
