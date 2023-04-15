@@ -72,7 +72,7 @@ def dt(keys, values):
     dt = {}
     for key in keys:
         for value in values:
-            dt[key] = value
+            dt[key] += value
             values.remove(value)
             break
     return dt
