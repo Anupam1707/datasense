@@ -28,6 +28,9 @@ rows = worksheet.get_all_records()
 sales = spreadsheet.worksheet("Sales")
 
 os.remove("credentials.json")
+print("For your Reference")
+col = {1:"ID",2:"Date",3:"Region",4:"City",5:"Category",6:"Product",7:"Quantity",8:"Unit",9:"Total"}
+print(col)
 
 def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
     if rowno == None and alldata == None and colno != None:
@@ -38,7 +41,7 @@ def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
                 data = [ float(x) for x in data]
         except ValueError:
             pass
-            
+        data.append(colno)
         
     elif rowno != None and alldata == None and colno == None:
         data = sheetname.row_values(rowno)
@@ -51,16 +54,6 @@ def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
 
     
     return data
-#constants
-id = 1
-date = 2
-region = 3
-city = 4
-category = 5
-product = 6
-quantity = 7
-unitprice = 8
-totalprice = 9
 
 def avg(datalist):
     return sum(datalist)/len(datalist)
@@ -71,18 +64,47 @@ def total(datalist):
 def dt(keys, values):
     dt = {}
     for key in keys:
+        dt[key] = 0
         for value in values:
             dt[key] += value
             values.remove(value)
             break
     return dt
 
-def plot(datadict):
-    paras = list(datadict.keys())
-    values = list(datadict.values())  
+def plot(*ls):
+    xval = []
+    yval = []
     fig = plt.figure(figsize = (10, 5))
-    plt.bar(paras, values, color ='maroon',width = 0.4)
-    plt.xlabel("Parameters")
-    plt.ylabel("Values")
-    plt.title("Industry Sales")
-    plt.show()
+    xp = ""
+    yp = ""
+
+    if len(ls) == 2:
+            xval = ls[0]
+            yval = ls[1]
+            x = col[ls[0][-1]]
+            y = col[ls[1][-1]]
+            ls[0].remove(ls[0][-1])
+            ls[1].remove(ls[1][-1])
+            
+            plt.bar(xval, yval, color ='blue',width = 0.4)
+            plt.xlabel(x)
+            plt.ylabel(y)
+            plt.title("Industry Sales Analysis")
+            plt.show()
+            
+    elif len(ls) == 3:
+            yval = ls[2]
+            y = col[ls[2][-1]]
+            ls[2].remove(ls[2][-1])
+            
+            for i in ls[:1]:
+                x = col[i[-1]]
+                i.remove(i[-1])
+                
+                plt.bar(i, yval, color ='blue',width = 0.4, label = x)
+                plt.xlabel(x)
+                plt.ylabel(y)
+                plt.title("Industry Sales Analysis")
+                plt.show()
+#def pie(datalist, labels = None):
+    
