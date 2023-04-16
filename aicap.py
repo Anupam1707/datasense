@@ -1,5 +1,12 @@
 def caps():
-    query = takeCommand()
+    print("Choose between :")
+    print("1. Keyboard")
+    print("2. Voice")
+    q = int(input("Enter on of the number : "))
+    if q == 1:
+        query = str(input("Enter your query : "))
+    elif q == 2:
+        query = takeCommand()
     if "plot a" in query:
         query = query[6:]
         if "horizontal bar graph" in query:
