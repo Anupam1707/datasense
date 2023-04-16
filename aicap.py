@@ -27,7 +27,7 @@ def caps():
             query.remove("and")
             pie(data(sales, col[query[1]]), data(sales, col[query[0]]))
             
-     elif "plot" in query:
+    elif "plot" in query:
         query = query[4:]
         if "horizontal bar graph" in query:
             query = query[25:]
