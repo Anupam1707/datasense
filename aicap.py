@@ -46,6 +46,5 @@ def caps():
             query = query.split()
             query.remove("and")
             pie(data(sales, col[query[1]]), data(sales, col[query[0]]))
-
-        elif "exit" in query:
+    elif "exit" in query:
             quit()
