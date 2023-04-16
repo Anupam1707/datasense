@@ -15,5 +15,5 @@ def main():
     while True:
         speak(state)
         caps()
-        
+        state = b
 main()
