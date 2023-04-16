@@ -1,6 +1,4 @@
 #Fundamental Tools
-"""This file contains all the elememtary functions that are necessary for the AI Assistant"""
-
 import pyttsx3
 import speech_recognition as sr
 import time
@@ -42,13 +40,4 @@ def takeCommand():
     return query
 
 def features():
-    speak("I can Help You With:")
-    speak("Playing Across Youtube")
-    speak("Telling you the Current Time")
-    speak("Fetching the weather of any city across the world")
-    speak("Entertaining you with a joke")
-    speak("Telling the complete top news across India")
-    speak("Locating any place on the map")
-    speak("Writing and Reading Notes")
-    speak("And at last, searching across Internet")
-
+    speak("I can do")
