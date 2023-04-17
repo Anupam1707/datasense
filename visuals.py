@@ -67,22 +67,27 @@ def plotb(*ls, t = "bv"):
                 plt.title("Industry Sales Analysis")
                 plt.show()
     elif len(ls) == 3:
-            yval = ls[2]
-            y = ls[2][-1]
+            xval = ls[0]
+            y = ls[0][-1]
             y = y.title()
-            ls[2].remove(ls[2][-1])
-            
-            x = ls[0][-1]
-            x = x.title()
             ls[0].remove(ls[0][-1])
-
-            yax = np.arange(len(yval))
-                
-            plt.bar(ls[2] , yax - 0.2,width = 0.4,)
-            plt.bar(ls[2], yax + 0.2,width = 0.4, label = x)
             
-            plt.xlabel(x)
-            plt.ylabel(y)
+            y1val = =ls[1]
+            y1 = ls[1][-1]
+            y1 = y1.title()
+            
+            
+            y2val = ls[2]
+            y2 = ls[2][-1]
+            y2 = y2.title()
+
+            xax = np.arange(len(xval))
+                
+            plt.bar(xax - 0.2 , y1val,width = 0.4,label = y1)
+            plt.bar(xax + 0.2, y2val,width = 0.4, label = y2)
+            
+            plt.xticks(xax, xval)
+            plt.legend()
             plt.title("Industry Sales Analysis")
             plt.show()
             
