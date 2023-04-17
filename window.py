@@ -42,7 +42,7 @@ def graph_window():
     graph.geometry("1280x720")
     graph.resizable(False,False)
 
-    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/graph/bg.jpg")
+    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
     img = Image.open(BytesIO(response.content))
     img = img.resize((1280,720), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
