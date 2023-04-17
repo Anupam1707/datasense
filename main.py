@@ -10,10 +10,8 @@ def main():
     a = "How can I help You?"
     b = "Do you have any other Query or Question"
     state = a
-    login()
-    
-    while True:
-        speak(state)
-        caps()
-        state = b
+
+    speak(state)
+    caps()
+
 main()
