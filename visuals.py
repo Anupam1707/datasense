@@ -72,7 +72,7 @@ def plotb(*ls, t = "bv"):
             y = y.title()
             ls[0].remove(ls[0][-1])
             
-            y1val = =ls[1]
+            y1val = ls[1]
             y1 = ls[1][-1]
             y1 = y1.title()
             
