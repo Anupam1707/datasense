@@ -44,10 +44,10 @@ def login_window():
 
     login.mainloop()
 def graph_window():
-    l1v = StringVar()
-    l2v = StringVar()
-    l3v = StringVar()
-    typ = StringVar()
+    l1v = ""
+    l2v = ""
+    l3v = ""
+    typ = ""
     graph = Tk()
     graph.geometry("1280x720")
     graph.resizable(False,False)
