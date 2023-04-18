@@ -5,8 +5,7 @@ from io import BytesIO
 import time
 
 def fetch():
-    if l1v != None and l2v != None and l3v == "" and typ == "bv":
-        p = Label(graph, text="Plotting the Graph", font = "Arial 30 bold").pack()
+    if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
         plotb(data(sales, col[l1v.lower()]), data(sales, col[l2v.lower()]), t = "bv")
     print(l1v, l2v, l3v, typ)
 
@@ -54,6 +53,8 @@ def graph_window():
     global l3v
     global typ
 
+    
+
     graph = Tk()
     graph.geometry("1280x720")
     graph.resizable(False,False)
@@ -85,4 +86,4 @@ def graph_window():
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     graph.mainloop()
     
-login_window()
+graph_window()
