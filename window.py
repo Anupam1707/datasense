@@ -86,4 +86,4 @@ def graph_window():
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     graph.mainloop()
     
-graph_window()
+login_window()
