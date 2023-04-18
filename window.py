@@ -2,6 +2,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 import requests
 from io import BytesIO
+import time
 l1v = ""
 l2v = ""
 l3v = ""
@@ -35,6 +36,9 @@ def login_window():
                 else:
                         usr = -1
         if password_entry.get() == rows[usr]["Password"]:
+            welcome = Label(login, text=f"Welcome back {usernam_entry.get()}", font="Arial 30", fg = "blue").pack()
+            log = Label(login, text="Logging You In...", font="Arial 30", fg = "blue").pack()
+            time.sleep(2)
             login.destroy() 
             graph_window()
         else:
