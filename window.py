@@ -61,8 +61,8 @@ def graph_window():
 
     graph.title("Food Sales Management")
     title = Label(graph, text= 'Food Sales Management', font= 'Arial 35 bold',bg='#7676EE').pack()
-    l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").place(y = 80)
-    l1inp = Entry(graph, textvariable= l1val, width = 24, font='Arial 26 bold').pack(side = TOP, anchor="nw", pady = 0)
+    l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").pcak()
+    l1inp = Entry(graph, textvariable= l1val, width = 24, font='Arial 26 bold').pack()
     l2 = Label(graph, text="Data List 2", font= "Arial 30", fg = "black").pack()
     l2inp = Entry(graph, textvariable= l2val, width = 24, font='Arial 26 bold').pack()
     l3 = Label(graph, text="Data List 3", font= "Arial 30", fg = "black").pack()
