@@ -3,14 +3,12 @@ from PIL import Image, ImageTk
 import requests
 from io import BytesIO
 import time
-l1v = ""
-l2v = ""
-l3v = ""
-typ = ""
+
 def fetch():
     if l1v != None and l2v != None and l3v == "" and typ == "bv":
         p = Label(graph, text="Plotting the Graph", font = "Arial 30 bold").pack()
         plotb(data(sales, col[l1v.lower()]), data(sales, col[l2v.lower()]), t = "bv")
+    print(l1v, l2v, l3v, typ)
 
 def login_window():
     login = Tk()
@@ -51,6 +49,11 @@ def login_window():
 
     login.mainloop()
 def graph_window():
+    global l1v
+    global l2v
+    global l3v
+    global typ
+
     graph = Tk()
     graph.geometry("1280x720")
     graph.resizable(False,False)
@@ -63,6 +66,11 @@ def graph_window():
     bk.image = test
     bk.place(x=0, y=0)
 
+    l1v = StringVar()
+    l2v = StringVar()
+    l3v = StringVar()
+    typ = StringVar()
+    
     graph.title("Food Sales Management")
     title = Label(graph, text= 'Food Sales Management', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
     l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").pack()
