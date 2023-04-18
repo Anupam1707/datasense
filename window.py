@@ -34,7 +34,7 @@ def login_window():
             login.destroy() 
             graph_window()
         else:
-            error_label = Label(login, text="Incorrect username or password", fg="red")
+            error_label = Label(login, text="Incorrect username or password",font = "Arial 25", fg="red")
             error_label.pack()
 
     button = Button(login, text="Login", font = "Arial 40 bold", command=login_button)
