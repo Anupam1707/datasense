@@ -7,12 +7,12 @@ import time
 def pt():
     if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
-    elif l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bh":
-        plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bh")
-    elif l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bv":
-        plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bv")
-    elif l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bh":
-        plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bh")
+    #elif l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bh":
+     #   plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bh")
+    #elif l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bv":
+     #   plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bv")
+    #elif l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bh":
+     #   plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bh")
 
 def login_window():
     login = Tk()
