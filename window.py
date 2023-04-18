@@ -10,9 +10,10 @@ def fetch(t, l1val = None, l2val = None, l3val = None):
 def login_window():
     login = Tk()
     login.title("Login")
+    login.configure(bg = "black")
     login.attributes('-fullscreen', True)
 
-    title = Label(login, text="Food Database Login", font = "Arial 40 bold", bg = "skyblue", fg = "red").pack(pady = 50)
+    title = Label(login, text="Food Database Login", font = "Arial 40 bold", fg = "white").pack(pady = 50)
     username_label = Label(login, text="Username", font = "Arial 35 bold")
     username_label.pack(anchor="center")
     username_entry = Entry(login, font = "Arial 30 bold")
