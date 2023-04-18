@@ -3,24 +3,25 @@ from PIL import Image, ImageTk
 import requests
 from io import BytesIO
 
-##def fetch(t, l1val = None, l2val = None, l3val = None):
-#    if l1val != None and l2val != None and l3val == None and t == "bv":
-#        plotb(data(sales, col[l1val.lower()]), data(sales, col[l2val.lower()]), t = "bv")
+def fetch(t, l1val = None, l2val = None, l3val = None):
+    if l1val != None and l2val != None and l3val == None and t == "bv":
+        plotb(data(sales, col[l1val.lower()]), data(sales, col[l2val.lower()]), t = "bv")
 
 def login_window():
     login = Tk()
     login.title("Login")
-    login.geometry("300x150")
+    login.attributes('-fullscreen', True)
 
-    username_label = Label(login, text="Username")
-    username_label.pack()
-    username_entry = Entry(login)
-    username_entry.pack()
+    title = Label(login, text="Food Database Login", font = "Arial 40 bold", bg = "skyblue", fg = "red").pack(pady = 50)
+    username_label = Label(login, text="Username", font = "Arial 35 bold")
+    username_label.pack(anchor="center")
+    username_entry = Entry(login, font = "Arial 30 bold")
+    username_entry.pack(side = TOP)
 
-    password_label = Label(login, text="Password")
-    password_label.pack()
-    password_entry = Entry(login, show="*")
-    password_entry.pack()
+    password_label = Label(login, text="Password", font = "Arial 35 bold")
+    password_label.pack(side = TOP)
+    password_entry = Entry(login, show="*", font = "Arial 30 bold")
+    password_entry.pack(side = TOP)
 
     def login_button():
         for i in range(len(rows)):
@@ -36,8 +37,9 @@ def login_window():
             error_label = Label(login, text="Incorrect username or password", fg="red")
             error_label.pack()
 
-    button = Button(login, text="Login", command=login_button)
-    button.pack()
+    button = Button(login, text="Login", font = "Arial 40 bold", command=login_button)
+    Button(login, text = 'Exit', font = 'Arial 20 bold', bg='red', command=login.destroy).pack(side = BOTTOM,anchor = "se")    
+    button.pack(side = TOP)
 
     login.mainloop()
 def graph_window():
