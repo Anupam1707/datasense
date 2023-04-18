@@ -4,7 +4,7 @@ import requests
 from io import BytesIO
 import time
 
-def fetch():
+def pt():
     if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
     elif l1v.get() != None and l2v.get() != None and l3v.get() = "" and typ.get() == "bh":
@@ -87,7 +87,7 @@ def graph_window():
     l3inp = Entry(graph, textvariable= l3v, width = 24, font='Arial 26 bold').pack()
     l4 = Label(graph, text="Type of Graph", font= "Arial 30", fg = "black").pack()
     l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
-    Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=fetch).pack()
+    Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     graph.mainloop()
     
