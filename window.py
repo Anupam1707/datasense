@@ -6,7 +6,7 @@ import time
 
 def fetch():
     if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
-        plotb(data(sales, col[l1v.lower()]), data(sales, col[l2v.lower()]), t = "bv")
+        plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
     print(l1v, l2v, l3v, typ)
 
 def login_window():
