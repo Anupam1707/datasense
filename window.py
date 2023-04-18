@@ -5,19 +5,14 @@ from io import BytesIO
 import time
 
 def pt():
-    l1 = l1v.get()
-    l2 = l2v.get()
-    l3 = l3v.get()
-    tp = typ.get()
-    print(l1, l2, l3, tp)
-    if l1 != None and l2 != None and l3v == "" and tp == "bv":
-        plotb(data(sales, col[l1.lower()]), data(sales, col[l2.lower()]), t = "bv")
-    #elif l1 != None and l2 != None and l3 == "" and tp == "bh":
-     #   plotb(data(sales, col[l1.lower()]), data(sales, col[l2.lower()]), t = "bh")
-    #elif l1 != None and l2 != None and l3 != "" and tp == "bv":
-     #   plotb(data(sales, col[l1.lower()]), data(sales, col[l2.lower()]),data(sales, col[l3.lower()]), t = "bv")
-    #elif l1 != None and l2 != None and l3 != "" and tp == "bh":
-     #   plotb(data(sales, col[l1.lower()]), data(sales, col[l2.lower()]),data(sales, col[l3.lower()]), t = "bh")
+    if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
+        plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
+    #elif l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bh":
+     #   plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bh")
+    #elif l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bv":
+     #   plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bv")
+    #elif l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bh":
+     #   plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bh")
 
 def login_window():
     login = Tk()
