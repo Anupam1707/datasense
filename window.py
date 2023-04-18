@@ -3,8 +3,8 @@ from PIL import Image, ImageTk
 import requests
 from io import BytesIO
 
-def fetch(t, l1val, l2val, l3val = ""):
-    if l1val != None and l2val != None and l3val == "" and t == "bv":
+def fetch():
+    if l1v.get() != None and l2v.get() != None and l3v.get() == "" and t.get() == "bv":
         plotb(data(sales, col[l1val.lower()]), data(sales, col[l2val.lower()]), t = "bv")
 
 def login_window():
@@ -44,10 +44,10 @@ def login_window():
 
     login.mainloop()
 def graph_window():
-    l1v = None
-    l2v = None
-    l3v = ""
-    typ = ""
+    l1v = StringVar(graph)
+    l2v = StringVar(graph)
+    l3v = StringVar(graph)
+    typ = StringVar(graph)
     graph = Tk()
     graph.geometry("1280x720")
     graph.resizable(False,False)
@@ -70,7 +70,7 @@ def graph_window():
     l3inp = Entry(graph, textvariable= l3v, width = 24, font='Arial 26 bold').pack()
     l4 = Label(graph, text="Type of Graph", font= "Arial 30", fg = "black").pack()
     l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
-    Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=fetch(typ, l1v, l2v, l3v)).pack()
+    Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=fetch).pack()
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     graph.mainloop()
     
