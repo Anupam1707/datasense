@@ -4,8 +4,8 @@ import requests
 from io import BytesIO
 
 def fetch():
-    if l1v.get() != None and l2v.get() != None and l3v.get() == "" and t.get() == "bv":
-        plotb(data(sales, col[l1val.lower()]), data(sales, col[l2val.lower()]), t = "bv")
+    if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
+        plotb(data(sales, col[l1v.lower()]), data(sales, col[l2v.lower()]), t = "bv")
 
 def login_window():
     login = Tk()
