@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 import requests
 from io import BytesIO
 
-##def fetch(l1val = None, l2val = None, l3val = None, t):
+##def fetch(t, l1val = None, l2val = None, l3val = None):
 #    if l1val != None and l2val != None and l3val == None and t == "bv":
 #        plotb(data(sales, col[l1val.lower()]), data(sales, col[l2val.lower()]), t = "bv")
 
@@ -59,8 +59,8 @@ def graph_window():
 
     graph.title("Food Sales Management")
     title = Label(graph, text= 'Food Sales Management', font= 'Arial 35 bold',bg='#7676EE').pack()
-    l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").pack()
-    l1inp = Entry(graph, textvariable= l1val, width = 24, font='Arial 26 bold').pack()
+    l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").place(y = 80)
+    l1inp = Entry(graph, textvariable= l1val, width = 24, font='Arial 26 bold').pack(side = TOP, anchor="nw", pady = 0)
     l2 = Label(graph, text="Data List 2", font= "Arial 30", fg = "black").pack()
     l2inp = Entry(graph, textvariable= l2val, width = 24, font='Arial 26 bold').pack()
     l3 = Label(graph, text="Data List 3", font= "Arial 30", fg = "black").pack()
@@ -72,4 +72,4 @@ def graph_window():
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     graph.mainloop()
     
-login_window()
+graph_window()
