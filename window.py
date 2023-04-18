@@ -31,7 +31,7 @@ def login_window():
                         usr = -1
         if password_entry.get() == rows[usr]["Password"]:
             login.destroy() 
-            home_window()
+            graph_window()
         else:
             error_label = Label(login, text="Incorrect username or password", fg="red")
             error_label.pack()
