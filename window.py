@@ -2,7 +2,10 @@ from tkinter import *
 from PIL import Image, ImageTk
 import requests
 from io import BytesIO
-
+l1v = ""
+l2v = ""
+l3v = ""
+typ = ""
 def fetch():
     if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
         plotb(data(sales, col[l1v.lower()]), data(sales, col[l2v.lower()]), t = "bv")
@@ -44,10 +47,6 @@ def login_window():
 
     login.mainloop()
 def graph_window():
-    l1v = ""
-    l2v = ""
-    l3v = ""
-    typ = ""
     graph = Tk()
     graph.geometry("1280x720")
     graph.resizable(False,False)
