@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 import requests
 from io import BytesIO
 
-#def fetch(l1val = None, l2val = None, l3val = None, t):
+##def fetch(l1val = None, l2val = None, l3val = None, t):
 #    if l1val != None and l2val != None and l3val == None and t == "bv":
 #        plotb(data(sales, col[l1val.lower()]), data(sales, col[l2val.lower()]), t = "bv")
 
