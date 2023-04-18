@@ -8,13 +8,13 @@ l2v = ""
 l3v = ""
 typ = ""
 def fetch():
-    if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
+    if l1v != None and l2v != None and l3v == "" and typ == "bv":
+        p = Label(graph, text="Plotting the Graph", font = "Arial 30 bold").pack()
         plotb(data(sales, col[l1v.lower()]), data(sales, col[l2v.lower()]), t = "bv")
 
 def login_window():
     login = Tk()
     login.title("Login")
-    login.configure(bg = "black")
     login.attributes('-fullscreen', True)
 
     title = Label(login, text="Food Database Login", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
