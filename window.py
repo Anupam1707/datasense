@@ -9,7 +9,7 @@ def pt():
     l2 = l2v.get()
     l3 = l3v.get()
     tp = typ.get()
-    
+    print(l1, l2, l3, tp)
     if l1 != None and l2 != None and l3v == "" and tp == "bv":
         plotb(data(sales, col[l1.lower()]), data(sales, col[l2.lower()]), t = "bv")
     elif l1 != None and l2 != None and l3 == "" and tp == "bh":
