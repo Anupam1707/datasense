@@ -18,10 +18,14 @@ def home_window():
     home = Tk()
     home.title("Home Page")
     home.configure(bg = "black")
-    
+
+    def switch():
+        home.destroy()
+        graph_window()
+        
     Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
-    Button(home, text = "Visual Analysis", command=graph_window "Arial 30 bold", fg = "black", bg = "white").pack()
-    Button(home, text = "Numeric Analysis", command=home, font "Arial 30 bold", fg = "black", bg = "white").pack()
+    Button(home, text = 'Visual Analysis', font = 'Arial 20 bold', bg='white', command=switch).pack()
+    Button(home, text = 'Numeric Analysis', font = 'Arial 20 bold', bg='white', command=switch).pack()
     
     home.mainloop()
     
@@ -65,7 +69,6 @@ def login_window():
     login.mainloop()
     
 def graph_window():
-    home.destroy()
     global l1v
     global l2v
     global l3v
@@ -102,4 +105,4 @@ def graph_window():
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     graph.mainloop()
     
-login_window()
+    login_window()
