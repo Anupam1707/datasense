@@ -64,7 +64,8 @@ def login_window():
             error_label.pack()
 
     button = Button(login, text="Login", font = "Arial 30 bold", command=login_button)
-    Button(login, text = 'Exit', font = 'Arial 20 bold', bg='red', command=login.destroy).pack(side = BOTTOM,anchor = "se")    
+    Button(login, text = 'Exit', font = 'Arial 20 bold', bg='red', command=login.destroy).pack(side = BOTTOM,anchor = "se")
+    Button(login, text = 'Home', font = 'Arial 20 bold', bg='blue', command=login.destroy, home_window).pack(side = BOTTOM,anchor = "sw")
     button.pack(side = TOP)
 
     login.mainloop()
