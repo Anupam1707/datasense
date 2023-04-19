@@ -19,9 +19,9 @@ def home_window():
     home.title("Home Page")
     home.configure(bg = "black")
     
-    title = Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
-    visual = Button(home, text = "Visual Analysis", command=graph_window "Arial 30 bold", fg = "black", bg = "white").pack()
-    numeric = Button(home, text = "Numeric Analysis", command=home, font "Arial 30 bold", fg = "black", bg = "white").pack()
+    Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
+    Button(home, text = "Visual Analysis", command=graph_window "Arial 30 bold", fg = "black", bg = "white").pack()
+    Button(home, text = "Numeric Analysis", command=home, font "Arial 30 bold", fg = "black", bg = "white").pack()
     
     home.mainloop()
     
