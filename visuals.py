@@ -90,7 +90,7 @@ def plotb(*ls, t = "bv"):
             plt.xlabel(xlbl)
             plt.ylabel("Grouped")
             plt.title("Industry Sales Analysis")
-            plt.xticks(bar1, x)
+            plt.xticks(bar1 + w/2, x)
             plt.legend()
             plt.show()
             
