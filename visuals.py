@@ -66,34 +66,7 @@ def plotb(*ls, t = "bv"):
                 plt.ylabel(x)
                 plt.title("Industry Sales Analysis")
                 plt.show()
-    elif len(ls) == 3:
-            w = 0.4
-            x = ls[0]
-            xlbl = ls[0][-1]
-            xlbl = xlbl.title()
-            ls[0].remove(ls[0][-1])
-            
-            n1 = ls[1]
-            y1lbl = ls[1][-1]
-            ls[1].remove(ls[1][-1])
-            
-            n2 = ls[2]
-            y2lbl = ls[2][-1]
-            ls[2].remove(ls[2][-1])
-            
-            bar1 = np.arange(len(x))
-            bar2 = [i+w for i in bar1]
-                
-            plt.bar(bar1, n1, w, label = y1lbl)
-            plt.bar(bar1, n2, w, label = y2lbl)
-            
-            plt.xlabel(xlbl)
-            plt.ylabel("Grouped")
-            plt.title("Industry Sales Analysis")
-            plt.xticks(bar1 + w/2, x)
-            plt.legend()
-            plt.show()
-            
+      
 def pie(dt):
     
     ls.remove(ls[-1])
