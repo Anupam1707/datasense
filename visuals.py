@@ -69,7 +69,7 @@ def plotb(*ls, t = "bv"):
     elif len(ls) == 3:
             prim = ls[0]
             p = ls[0][-1]
-            p = y.title()
+            p = p.title()
             ls[0].remove(ls[0][-1])
             
             n1 = ls[1]
