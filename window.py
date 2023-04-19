@@ -17,6 +17,7 @@ def pt():
 def home_window():
     home = Tk()
     home.title("Home Page")
+    home.attributes("1280x720")
     home.configure(bg = "black")
 
     def switch():
@@ -103,6 +104,7 @@ def graph_window():
     l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
     Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
+    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=home_window).pack(side = BOTTOM,anchor = "se")    
     graph.mainloop()
     
 login_window()
