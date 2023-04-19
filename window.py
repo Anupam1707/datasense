@@ -17,7 +17,7 @@ def pt():
 def home_window():
     home = Tk()
     home.title("Home Page")
-    home.attributes("1280x720")
+    home.geometry("1280x720")
     home.configure(bg = "black")
 
     def switch():
