@@ -14,6 +14,17 @@ def pt():
     if l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bh":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bh")
 
+def home_window():
+    home = Tk()
+    home.title("Home Page")
+    home.configure(bg = "black")
+    
+    title = Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
+    visual = Button(home, text = "Visual Analysis", command=graph_window "Arial 30 bold", fg = "black", bg = "white").pack()
+    numeric = Button(home, text = "Numeric Analysis", command=home, font "Arial 30 bold", fg = "black", bg = "white").pack()
+    
+    home.mainloop()
+    
 def login_window():
     login = Tk()
     login.title("Login")
@@ -42,7 +53,7 @@ def login_window():
             log = Label(login, text="Logging You In...", font="Arial 30", fg = "blue").pack()
             time.sleep(2)
             login.destroy() 
-            graph_window()
+            home_window()
         else:
             error_label = Label(login, text="Incorrect username or password",font = "Arial 30", fg="red")
             error_label.pack()
@@ -52,13 +63,13 @@ def login_window():
     button.pack(side = TOP)
 
     login.mainloop()
+    
 def graph_window():
+    home.destroy()
     global l1v
     global l2v
     global l3v
     global typ
-
-    
 
     graph = Tk()
     graph.geometry("1280x720")
