@@ -9,10 +9,8 @@ def pt():
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
     if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bh":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bh")
-    if l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bv":
-        plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bv")
-    if l1v.get() != None and l2v.get() != None and l3v.get() != "" and typ.get() == "bh":
-        plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]),data(sales, col[l3v.get().lower()]), t = "bh")
+    else : 
+        Label(graph, text = "Invalid Inputs", font = "Arial 30 bold", bg = "red").pack()
 
 def home_window():
     home = Tk()
@@ -109,8 +107,6 @@ def graph_window():
     l1inp = Entry(graph, textvariable= l1v, width = 24, font='Arial 26 bold').pack()
     l2 = Label(graph, text="Data List 2", font= "Arial 30", fg = "black").pack()
     l2inp = Entry(graph, textvariable= l2v, width = 24, font='Arial 26 bold').pack()
-    l3 = Label(graph, text="Data List 3", font= "Arial 30", fg = "black").pack()
-    l3inp = Entry(graph, textvariable= l3v, width = 24, font='Arial 26 bold').pack()
     l4 = Label(graph, text="Type of Graph", font= "Arial 30", fg = "black").pack()
     l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
     Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
