@@ -1,2 +1,1 @@
-# AI_Assistant
-An ai assistant similar to alexa using python
+# AI Enabled Food Industry Data Analysis and Management
