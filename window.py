@@ -112,7 +112,7 @@ def graph_window():
     l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
     Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
-    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "se")    
+    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "sw")    
     graph.mainloop()
     
 login_window()
