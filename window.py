@@ -45,7 +45,7 @@ def login_window():
     password_label.pack(side = TOP)
     password_entry = Entry(login, show="*", font = "Arial 30 bold")
     password_entry.pack(side = TOP)
-
+        
     def login_button():
         for i in range(len(rows)):
                 if username_entry.get() == rows[i]["Username"]:
@@ -55,8 +55,6 @@ def login_window():
                         usr = -1
         if password_entry.get() == rows[usr]["Password"]:
             welcome = Label(login, text=f"Welcome back {username_entry.get()}", font="Arial 30", fg = "blue").pack()
-            log = Label(login, text="Logging You In...", font="Arial 30", fg = "blue").pack()
-            time.sleep(2)
             login.destroy() 
             home_window()
         else:
@@ -65,7 +63,7 @@ def login_window():
 
     button = Button(login, text="Login", font = "Arial 30 bold", command=login_button)
     Button(login, text = 'Exit', font = 'Arial 20 bold', bg='red', command=login.destroy).pack(side = BOTTOM,anchor = "se")
-    Button(login, text = 'Home', font = 'Arial 20 bold', bg='blue', command=login.destroy, home_window).pack(side = BOTTOM,anchor = "sw")
+    
     button.pack(side = TOP)
 
     login.mainloop()
@@ -79,7 +77,11 @@ def graph_window():
     graph = Tk()
     graph.geometry("1280x720")
     graph.resizable(False,False)
-
+    
+    def switch():
+        graph.destroy()
+        home_window()
+        
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
     img = Image.open(BytesIO(response.content))
     img = img.resize((1280,720), Image.LANCZOS)
@@ -105,7 +107,7 @@ def graph_window():
     l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
     Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
-    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=home_window).pack(side = BOTTOM,anchor = "se")    
+    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "se")    
     graph.mainloop()
     
 login_window()
