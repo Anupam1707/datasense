@@ -31,10 +31,11 @@ def dt(keys, values):
     dt = {}
     for key in keys:
         dt[key] = 0
-        for value in values:
-            dt[key] += value
-            values.remove(value)
-            break
+    for key in range(len(keys)):
+        for value in range(len(values)):
+            if key[value] == keys[key]:
+                dt[keys[key]] += values[value]
+        break
     return dt
 
 def plotb(*ls, t = "bv"):
@@ -68,12 +69,9 @@ def plotb(*ls, t = "bv"):
                 plt.show()
       
 def pie(dt):
-    
-    ls.remove(ls[-1])
-    if labels != None:
-        labels.remove(labels[-1])
+    labels = dt.keys()
         
-    y = np.array(ls)
+    y = np.array(list(dt.values))
     mylabels = labels
     plt.pie(y, labels = mylabels)
     plt.show()
