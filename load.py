@@ -12,9 +12,9 @@ def load():
 
             progress_bar.start()
              
-    load = Tk()
-    load.title("Loading")
+load = Tk()
+load.title("Loading")
 
-    start_loading()
-    load.mainloop()
+start_loading()
+load.mainloop()
 load()
