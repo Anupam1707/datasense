@@ -17,3 +17,4 @@ def load():
 
     start_loading()
     window.mainloop()
+load()
