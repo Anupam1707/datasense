@@ -11,10 +11,9 @@ def load():
             progress_bar.pack(pady=10)
 
             progress_bar.start()
-             
+    start_loading()
+    
 load = Tk()
 load.title("Loading")
-
-start_loading()
 load.mainloop()
 load()
