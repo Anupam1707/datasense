@@ -114,5 +114,6 @@ def graph_window():
     Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "sw")    
     graph.mainloop()
     
+progress_bar.stop()
 load.destroy()
 login_window()
