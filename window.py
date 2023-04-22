@@ -1,4 +1,4 @@
-#load.destroy()
+load.destroy()
 
 from tkinter import *
 from PIL import Image, ImageTk
