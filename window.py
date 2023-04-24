@@ -1,9 +1,3 @@
-from tkinter import *
-from PIL import Image, ImageTk
-import requests
-from io import BytesIO
-import time
-
 def pt():
     if l1v.get() != None and l2v.get() != None and typ.get() == "bv":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
