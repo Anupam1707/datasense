@@ -77,7 +77,6 @@ def login_window():
 def graph_window():
     global l1v
     global l2v
-    global l3v
     global typ
 
     graph = Tk()
@@ -98,17 +97,19 @@ def graph_window():
 
     l1v = StringVar()
     l2v = StringVar()
-    l3v = StringVar()
     typ = StringVar()
     
     graph.title("Food Sales Management")
     title = Label(graph, text= 'Food Sales Management', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
     l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").pack()
-    l1inp = Entry(graph, textvariable= l1v, width = 24, font='Arial 26 bold').pack()
+    l1inp = OptionMenu(graph, l1v, ["Product", "Category", "City", "Region", "Quantity", "Unit Price", "Total Price"], command = display_selected).pack()
+    #l1inp = Entry(graph, textvariable= l1v, width = 24, font='Arial 26 bold').pack()
     l2 = Label(graph, text="Data List 2", font= "Arial 30", fg = "black").pack()
+    #l2inp = Entry(graph, textvariable= l2v, width = 24, font='Arial 26 bold').pack()
     l2inp = Entry(graph, textvariable= l2v, width = 24, font='Arial 26 bold').pack()
     l4 = Label(graph, text="Type of Graph", font= "Arial 30", fg = "black").pack()
     l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
+    #l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
     Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "sw")    
