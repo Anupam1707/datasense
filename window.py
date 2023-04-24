@@ -102,7 +102,7 @@ def graph_window():
     graph.title("Food Sales Management")
     title = Label(graph, text= 'Food Sales Management', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
     l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").pack()
-    l1inp = OptionMenu(graph, l1v, ["Product", "Category", "City", "Region", "Quantity", "Unit Price", "Total Price"], command = display_selected)
+    l1inp = OptionMenu(graph, l1v, ["Product", "Category", "City", "Region", "Quantity", "Unit Price", "Total Price"])
     #l1inp = Entry(graph, textvariable= l1v, width = 24, font='Arial 26 bold').pack()
     l2 = Label(graph, text="Data List 2", font= "Arial 30", fg = "black").pack()
     #l2inp = Entry(graph, textvariable= l2v, width = 24, font='Arial 26 bold').pack()
