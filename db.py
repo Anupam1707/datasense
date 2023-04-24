@@ -28,4 +28,4 @@ rows = worksheet.get_all_records()
 sales = spreadsheet.worksheet("Sales")
 
 os.remove("credentials.json")
-col = {"id":1, "date":2, "region":3,"city":4,"category":5,"product":6,"quantity":7,"unit":8,"total":9}
+col = {"id":1, "date":2, "region":3,"city":4,"category":5,"product":6,"quantity":7,"unit price":8,"total price":9}
