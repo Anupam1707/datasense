@@ -5,9 +5,9 @@ from io import BytesIO
 import time
 
 def pt():
-    if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bv":
+    if l1v.get() != None and l2v.get() != None and typ.get() == "bv":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
-    if l1v.get() != None and l2v.get() != None and l3v.get() == "" and typ.get() == "bh":
+    if l1v.get() != None and l2v.get() != None and typ.get() == "bh":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bh")
     else : 
         Label(graph, text = "Invalid Inputs", font = "Arial 30 bold", bg = "red").pack()
