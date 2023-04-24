@@ -32,7 +32,7 @@ def home_window():
     Button(home, text = 'Visual Analysis', font = 'Arial 20 bold', bg='white', command=switchg).pack()
     Button(home, text = 'Numeric Analysis', font = 'Arial 20 bold', bg='white', command=switchn).pack()
     Button(home, text = 'Exit', font = 'Arial 20 bold', bg='red', command=home.destroy).pack(side = BOTTOM,anchor = "se").pack()
-    Button(home, text = 'Log Out', font = 'Arial 20 bold', bg='red', command=logout).pack(side = BOTTOM,anchor = "sw").pack()
+    Button(home, text = 'Log Out', font = 'Arial 20 bold', bg='red', command=logout).pack(side = BOTTOM,anchor = "se").pack()
     
     home.mainloop()
     
@@ -96,13 +96,16 @@ def graph_window():
     bk.place(x=0, y=0)
 
     l1v = StringVar()
+    l1v.set("product")
     l2v = StringVar()
+    l2v.set("total")
     typ = StringVar()
+    typ.set("bv")
     
     graph.title("Food Sales Management")
     title = Label(graph, text= 'Food Sales Management', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
     l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").pack()
-    l1inp = OptionMenu(graph, l1v, ["Product", "Category", "City", "Region", "Quantity", "Unit Price", "Total Price"])
+    l1inp = OptionMenu(graph, l1v, *col.keys()).pack(expand = True)
     #l1inp = Entry(graph, textvariable= l1v, width = 24, font='Arial 26 bold').pack()
     l2 = Label(graph, text="Data List 2", font= "Arial 30", fg = "black").pack()
     #l2inp = Entry(graph, textvariable= l2v, width = 24, font='Arial 26 bold').pack()
