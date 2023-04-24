@@ -3,8 +3,6 @@ def pt():
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
     if l1v.get() != None and l2v.get() != None and typ.get() == "horizontal bar graph":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bh")
-    else : 
-        Label(graph, text = "Invalid Inputs", font = "Arial 30 bold", bg = "red").pack()
 
 def home_window():
     home = Tk()
@@ -102,11 +100,11 @@ def graph_window():
     title = Label(graph, text= 'Food Sales Management', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
     l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").pack()
     l1inp = OptionMenu(graph, l1v, *col.keys()).pack(expand = True)
+    l1inp.config(font = 30)
     l2 = Label(graph, text="Data List 2", font= "Arial 30", fg = "black").pack()
     l2inp = OptionMenu(graph, l2v, *col.keys()).pack(expand = True)
     l4 = Label(graph, text="Type of Graph", font= "Arial 30", fg = "black").pack()
     l4inp = OptionMenu(graph, typ, *tps).pack(expand = True)
-    #l4inp = Entry(graph, textvariable= typ, width = 24, font='Arial 26 bold').pack()
     Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "sw")    
