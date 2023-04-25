@@ -29,6 +29,15 @@ def home_window():
     home.mainloop()
     
 def login_window():
+    
+    with open("acc.txt", "w+") as a:
+        d = a.readlines()
+        if d:
+            d = d.split()
+            if d[1] = "IN":
+                lg = True
+            usr = d[0]
+    
     login = Tk()
     login.title("Login")
     login.attributes('-fullscreen', True)
@@ -43,6 +52,9 @@ def login_window():
     password_label.pack(side = TOP)
     password_entry = Entry(login, show="*", font = "Arial 30 bold")
     password_entry.pack(side = TOP)
+        
+    if lg == True:
+        con = Button(graph, text= f"Continue as {usr}", font = "Arial 20 bold", bg="skyblue", command=home_window).pack()
         
     def login_button():
         for i in range(len(rows)):
