@@ -34,7 +34,7 @@ def login_window():
         d = a.readlines()
         if d:
             d = d.split()
-            if d[1] = "IN":
+            if d[1] == "IN":
                 lg = True
             usr = d[0]
     
