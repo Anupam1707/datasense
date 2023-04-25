@@ -29,7 +29,7 @@ def home_window():
     home.mainloop()
     
 def login_window():
-    
+    lg = None
     with open("acc.txt", "w+") as a:
         d = a.readlines()
         if d:
