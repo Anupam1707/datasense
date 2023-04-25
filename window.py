@@ -54,7 +54,7 @@ def login_window():
     password_entry.pack(side = TOP)
         
     if lg == True:
-        con = Button(graph, text= f"Continue as {usr}", font = "Arial 20 bold", bg="skyblue", command=home_window).pack()
+        con = Button(graph, text= f"Continue as {usr}", font = "Arial 20 bold", bg="skyblue", command=home_window).pack(pady = 30)
         
     def login_button():
         for i in range(len(rows)):
