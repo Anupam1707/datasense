@@ -30,13 +30,16 @@ def home_window():
     
 def login_window():
     lg = None
-    with open("acc.txt", "w+") as a:
+    usr = ""
+    with open("acc.txt", "r") as a:
         d = a.readlines()
         if d:
-            d = d.split()
-            if d[1] == "IN":
+            d[0] = d[0].split()
+            if d[0][1] == "IN":
                 lg = True
-            usr = d[0]
+        usr = d[0][0]
+
+
     
     login = Tk()
     login.title("Login")
