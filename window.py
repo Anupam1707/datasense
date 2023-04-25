@@ -17,6 +17,8 @@ def home_window():
         home.destroy()
         graph_window()
     def logout():
+        with open("acc.txt", "w+"):
+            d = f.readlines()
         home.destroy()
         login_window()
         
