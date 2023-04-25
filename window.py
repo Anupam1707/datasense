@@ -23,8 +23,8 @@ def home_window():
     Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
     Button(home, text = 'Visual Analysis', font = 'Arial 20 bold', bg='white', command=switchg).pack()
     Button(home, text = 'Numeric Analysis', font = 'Arial 20 bold', bg='white', command=switchn).pack()
-    Button(home, text = 'Exit', font = 'Arial 20 bold', bg='red', command=home.destroy).pack(side = BOTTOM,anchor = "se").pack()
-    Button(home, text = 'Log Out', font = 'Arial 20 bold', bg='red', command=logout).pack(side = BOTTOM,anchor = "se").pack()
+    Button(home, text = 'Exit', font = 'Arial 20 bold', bg='red', command=home.destroy).pack(side = BOTTOM,anchor = "se")
+    Button(home, text = 'Log Out', font = 'Arial 20 bold', bg='red', command=logout).pack(side = BOTTOM,anchor = "sw")
     
     home.mainloop()
     
