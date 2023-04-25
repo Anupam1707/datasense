@@ -39,7 +39,9 @@ def login_window():
                 lg = True
         usr = d[0][0]
 
-
+    def switch():
+        login.destroy()
+        home_window()
     
     login = Tk()
     login.title("Login")
@@ -55,10 +57,7 @@ def login_window():
     password_label.pack(side = TOP)
     password_entry = Entry(login, show="*", font = "Arial 30 bold")
     password_entry.pack(side = TOP)
-        
-    if lg == True:
-        con = Button(login, text= f"Continue as {usr}", font = "Arial 20 bold", bg="skyblue", command=home_window).pack(pady = 30)
-        
+           
     def login_button():
         for i in range(len(rows)):
                 if username_entry.get() == rows[i]["Username"]:
@@ -74,10 +73,10 @@ def login_window():
             error_label = Label(login, text="Incorrect username or password",font = "Arial 30", fg="red")
             error_label.pack()
 
-    button = Button(login, text="Login", font = "Arial 30 bold", command=login_button)
+    button = Button(login, text="Login", font = "Arial 30 bold", command=login_button).pack(side = TOP)
     Button(login, text = 'Exit', font = 'Arial 20 bold', bg='red', command=login.destroy).pack(side = BOTTOM,anchor = "se")
-    
-    button.pack(side = TOP)
+    if lg == True:
+        con = Button(login, text= f"Continue as {usr}", font = "Arial 20 bold", bg="skyblue", command=switch).pack(pady = 30)
 
     login.mainloop()
     
