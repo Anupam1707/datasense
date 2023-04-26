@@ -9,7 +9,6 @@ except ImportError:
 
 import requests
 
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/ai/main/tools.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/ai/main/account.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/ai/main/capabilities.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/ai/main/main.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/ai/main/db.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/ai/main/visuals.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/ai/main/window.py").text)
