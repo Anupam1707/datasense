@@ -71,11 +71,12 @@ def login_window():
                 else:
                         usr = -1
         if password_entry.get() == rows[usr]["Password"]:
+            user = username_entry.get()
             welcome = Label(login, text=f"Welcome back {username_entry.get()}", font="Arial 30", fg = "blue").pack()
             login.destroy() 
             home_window()
             with open("acc.txt","w") as w:
-                w.write(f"{username_entry.get()} IN")
+                w.write(f"{user} IN")
         else:
             error_label = Label(login, text="Incorrect username or password",font = "Arial 30", fg="red")
             error_label.pack()
