@@ -11,16 +11,16 @@ def home_window():
     home.configure(bg = "black")
 
     def switchg():
-        home.destroy()
         graph_window()
+        home.destroy()
     def switchn():
-        home.destroy()
         graph_window()
+        home.destroy()
     def logout():
         with open("acc.txt", "w"):
             pass
-        home.destroy()
         login_window()
+        home.destroy()
         
     Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
     Button(home, text = 'Visual Analysis', font = 'Arial 20 bold', bg='white', command=switchg).pack()
@@ -43,6 +43,10 @@ def signup_window():
     signup.title("Login")
     signup.attributes('-fullscreen', True)
 
+    def switchlog():
+        login_window()
+        signup.destroy()
+    
     title = Label(signup, text="Food Database SignUP", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
     username_label = Label(signup, text="Username", font = "Arial 35 bold")
     username_label.pack(anchor="center")
@@ -62,13 +66,13 @@ def signup_window():
         
         with open("acc.txt","w") as w:
                 w.write(f"{username_entry.get()} IN")
-                
-        signup.destroy()
+               
         home_window()
+        signup.destroy()
         
     button = Button(signup, text="SignUP", font = "Arial 30 bold", command=signup_button).pack(side = TOP)
     Button(signup, text = 'Exit', font = 'Arial 20 bold', bg='red', command=signup.destroy).pack(side = BOTTOM,anchor = "se")
-    Button(signup, text = 'Go Back', font = 'Arial 20 bold', bg='red', command=login_window).pack(side = BOTTOM,anchor = "sw")
+    Button(signup, text = 'Go Back', font = 'Arial 20 bold', bg='red', command=switchlog).pack(side = BOTTOM,anchor = "sw")
     signup.mainloop()
  
 
@@ -87,13 +91,12 @@ def login_window():
         with open("acc.txt","w") as w:
             pass
     def switch():
-        login.destroy()
         home_window()
+        login.destroy()
     
     def switchs():
-        login.destroy()
         signup_window()
-
+        login.destroy()
     
     login = Tk()
     login.title("Login")
@@ -147,8 +150,8 @@ def graph_window():
     graph.resizable(False,False)
     
     def switch():
-        graph.destroy()
         home_window()
+        graph.destroy()
         
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
     img = Image.open(BytesIO(response.content))
