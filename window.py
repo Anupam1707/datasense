@@ -59,8 +59,9 @@ def signup_window():
            
     def signup_button():
         worksheet.update_cell(usr,1,username_entry.get())
-        worksheet.update_cell(usr,1,password_entry.get()) 
-        worksheet.update_cell(usr,1,"Researcher")
+        worksheet.update_cell(usr,2,password_entry.get()) 
+        worksheet.update_cell(usr,3,"IN")
+        worksheet.update_cell(usr,4,"Researcher")
         
         with open("acc.txt","w") as w:
                 w.write(f"{username_entry.get()} IN")
