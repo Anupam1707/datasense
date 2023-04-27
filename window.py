@@ -11,16 +11,16 @@ def home_window():
     home.configure(bg = "black")
 
     def switchg():
-        graph_window()
         home.destroy()
+        graph_window()
     def switchn():
-        graph_window()
         home.destroy()
+        graph_window()
     def logout():
         with open("acc.txt", "w"):
             pass
-        login_window()
         home.destroy()
+        login_window()
         
     Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
     Button(home, text = 'Visual Analysis', font = 'Arial 20 bold', bg='white', command=switchg).pack()
@@ -44,8 +44,8 @@ def signup_window():
     signup.attributes('-fullscreen', True)
 
     def switchlog():
-        login_window()
         signup.destroy()
+        login_window()
     
     title = Label(signup, text="Food Database SignUP", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
     username_label = Label(signup, text="Username", font = "Arial 35 bold")
@@ -67,8 +67,8 @@ def signup_window():
         with open("acc.txt","w") as w:
                 w.write(f"{username_entry.get()} IN")
                
-        home_window()
         signup.destroy()
+        home_window()
         
     button = Button(signup, text="SignUP", font = "Arial 30 bold", command=signup_button).pack(side = TOP)
     Button(signup, text = 'Exit', font = 'Arial 20 bold', bg='red', command=signup.destroy).pack(side = BOTTOM,anchor = "se")
@@ -91,12 +91,12 @@ def login_window():
         with open("acc.txt","w") as w:
             pass
     def switch():
-        home_window()
         login.destroy()
+        home_window()
     
     def switchs():
-        signup_window()
         login.destroy()
+        signup_window()
     
     login = Tk()
     login.title("Login")
@@ -150,8 +150,8 @@ def graph_window():
     graph.resizable(False,False)
     
     def switch():
-        home_window()
         graph.destroy()
+        home_window()
         
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
     img = Image.open(BytesIO(response.content))
