@@ -33,14 +33,17 @@ def home_window():
 def login_window():
     lg = None
     usr = ""
-    with open("acc.txt", "r") as a:
-        d = a.readlines()
-        if d:
-            d[0] = d[0].split()
-            if d[0][1] == "IN":
-                lg = True
-        usr = d[0][0]
-
+    try:
+        with open("acc.txt", "r") as a:
+            d = a.readlines()
+            if d:
+                d[0] = d[0].split()
+                if d[0][1] == "IN":
+                    lg = True
+            usr = d[0][0]
+    except FileNotFoundError:
+        with open("acc.txt","w") as w:
+            pass
     def switch():
         login.destroy()
         home_window()
