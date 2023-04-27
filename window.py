@@ -40,7 +40,7 @@ def login_window():
                 d[0] = d[0].split()
                 if d[0][1] == "IN":
                     lg = True
-            usr = d[0][0]
+                    usr = d[0][0]
     except FileNotFoundError:
         with open("acc.txt","w") as w:
             pass
@@ -74,6 +74,8 @@ def login_window():
             welcome = Label(login, text=f"Welcome back {username_entry.get()}", font="Arial 30", fg = "blue").pack()
             login.destroy() 
             home_window()
+            with open("acc.txt","w") as w:
+                w.write(f"{username_entry.get()} IN"
         else:
             error_label = Label(login, text="Incorrect username or password",font = "Arial 30", fg="red")
             error_label.pack()
