@@ -68,6 +68,7 @@ def signup_window():
         
     button = Button(signup, text="SignUP", font = "Arial 30 bold", command=signup_button).pack(side = TOP)
     Button(signup, text = 'Exit', font = 'Arial 20 bold', bg='red', command=signup.destroy).pack(side = BOTTOM,anchor = "se")
+    Button(signup, text = 'Go Back', font = 'Arial 20 bold', bg='red', command=login_window).pack(side = BOTTOM,anchor = "sw")
     signup.mainloop()
  
 
