@@ -30,6 +30,46 @@ def home_window():
     
     home.mainloop()
     
+def signup_window():
+    usr = len(rows)+2
+    try:
+        with open("acc.txt", "r") as a:
+            d = a.readlines()
+    except FileNotFoundError:
+        with open("acc.txt","w") as w:
+            pass
+    def switch():
+        signup.destroy()
+        home_window()
+    
+    signup = Tk()
+    signup.title("Login")
+    signup.attributes('-fullscreen', True)
+
+    title = Label(signup, text="Food Database SignUP", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
+    username_label = Label(signup, text="Username", font = "Arial 35 bold")
+    username_label.pack(anchor="center")
+    username_entry = Entry(signup, font = "Arial 30 bold")
+    username_entry.pack(side = TOP)
+
+    password_label = Label(signup, text="Password", font = "Arial 35 bold")
+    password_label.pack(side = TOP)
+    password_entry = Entry(signup, show="*", font = "Arial 30 bold")
+    password_entry.pack(side = TOP)
+           
+    def signup_button():
+        worksheet.update_cell(usr,1,username_entry.get())
+        worksheet.update_cell(usr,1,password_entry.get()) 
+        worksheet.update_cell(usr,1,"Researcher")
+        
+        with open("acc.txt","w") as w:
+                w.write(f"{username_entry.get()} IN")
+                
+    button = Button(signup, text="SignUP", font = "Arial 30 bold", command=signup_button).pack(side = TOP)
+    Button(signup, text = 'Exit', font = 'Arial 20 bold', bg='red', command=signup.destroy).pack(side = BOTTOM,anchor = "se")
+    signup.mainloop()
+ 
+
 def login_window():
     lg = None
     usr = ""
@@ -47,6 +87,11 @@ def login_window():
     def switch():
         login.destroy()
         home_window()
+    
+    def switchs():
+        login.destroy()
+        signup_window()
+
     
     login = Tk()
     login.title("Login")
@@ -85,7 +130,7 @@ def login_window():
     Button(login, text = 'Exit', font = 'Arial 20 bold', bg='red', command=login.destroy).pack(side = BOTTOM,anchor = "se")
     if lg == True:
         con = Button(login, text= f"Continue as {usr}", font = "Arial 20 bold", bg="skyblue", command=switch).pack(pady = 30)
-
+    sign = Button(login, text= "Sign UP Instead", font = "Arial 20 bold", bg="skyblue", command=switchs).pack(pady = 30)
     login.mainloop()
     
 def graph_window():
