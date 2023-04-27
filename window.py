@@ -38,9 +38,6 @@ def signup_window():
     except FileNotFoundError:
         with open("acc.txt","w") as w:
             pass
-    def switch():
-        signup.destroy()
-        home_window()
     
     signup = Tk()
     signup.title("Login")
@@ -66,6 +63,9 @@ def signup_window():
         with open("acc.txt","w") as w:
                 w.write(f"{username_entry.get()} IN")
                 
+        signup.destroy()
+        home_window()
+        
     button = Button(signup, text="SignUP", font = "Arial 30 bold", command=signup_button).pack(side = TOP)
     Button(signup, text = 'Exit', font = 'Arial 20 bold', bg='red', command=signup.destroy).pack(side = BOTTOM,anchor = "se")
     signup.mainloop()
