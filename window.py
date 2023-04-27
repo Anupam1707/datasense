@@ -112,8 +112,8 @@ def graph_window():
     typ = StringVar()
     typ.set("horizontal bar graph")
     
-    graph.title("Food Sales Management")
-    title = Label(graph, text= 'Food Sales Management', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
+    graph.title("Visual Analysis")
+    title = Label(graph, text= 'Visual Analysis', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
     l1 = Label(graph, text="Data List 1", font= "Arial 30", fg = "black").pack()
     l1inp = OptionMenu(graph, l1v, *col.keys()).pack(expand = True)
     l2 = Label(graph, text="Data List 2", font= "Arial 30", fg = "black").pack()
