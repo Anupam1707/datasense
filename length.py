@@ -2,7 +2,11 @@ import requests
 import os
 
 url = "https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/"
-urls = ["db.py","visuals.py","window.py", "launcher.py"]
+
+urls = ["db.py?token=GHSAT0AAAAAAB5RTXXBDRCBXDOV42UX5ZRKZCLSYRA",
+        "visuals.py?token=GHSAT0AAAAAAB5RTXXBLAXTAT6S2FLGPAEEZCLSZHQ",
+        "window.py?token=GHSAT0AAAAAAB5RTXXBSHIC55QXOI6BYSBOZCLSZVA",
+        "launcher.py?token=GHSAT0AAAAAAB5RTXXALO23IQI2N6OF4LBYZCLS2MA"]
 
 sum = 0
 
