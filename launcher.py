@@ -21,6 +21,6 @@ import requests
 from tkinter import *
 from PIL import Image, ImageTk
 
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/db.py?token=GHSAT0AAAAAAB5RTXXBDRCBXDOV42UX5ZRKZCLSYRA").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visuals.py?token=GHSAT0AAAAAAB5RTXXBLAXTAT6S2FLGPAEEZCLSZHQ").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/window.py?token=GHSAT0AAAAAAB5RTXXBSHIC55QXOI6BYSBOZCLSZVA").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/db.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visuals.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/window.py").text)

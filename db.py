@@ -7,7 +7,7 @@ import os
 
 scope = ['https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive']
-url = 'https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/credentials.json?token=GHSAT0AAAAAAB5RTXXBYIXH7H36YXETKM4YZCLS5QA'
+url = 'https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/credentials.json'
 page = requests.get(url)
 with open("credentials.json","+w") as f:
           f.write(page.text)
