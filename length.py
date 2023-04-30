@@ -20,3 +20,4 @@ for i in urls:
         sum += len(f.readlines())
 
 os.remove("len.txt")
+print(sum)+
