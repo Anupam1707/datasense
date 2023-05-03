@@ -154,13 +154,6 @@ def graph_window():
         graph.destroy()
         home_window()
         
-    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
-    img = Image.open(BytesIO(response.content))
-    img = img.resize((1280,720), Image.LANCZOS)
-    test = ImageTk.PhotoImage(img)
-    bk = Label(image=test)
-    bk.image = test
-    bk.place(x=0, y=0)
 
     l1v = StringVar()
     l1v.set("product")
