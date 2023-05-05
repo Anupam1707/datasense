@@ -1,6 +1,7 @@
-#AI Assistant Launcher
-"""This Program is compiles all the tools required by AI and Launches the AI Assistant"""
+#Food Analysis App Launcher
+"""This Program is compiles all the tools required by Food Analysis App and Launches the Login Page"""
 
+#Import all libraries required by the app here
 from io import BytesIO
 import time
 import os
@@ -14,6 +15,7 @@ try :
     import gspread
     from oauth2client.service_account import ServiceAccountCredentials
 
+#Install libraries if not found
 except ImportError:
     os.system("pip install requests tkinter pillow numpy matplotlib gspread oauth2client") 
 
@@ -21,6 +23,7 @@ import requests
 from tkinter import *
 from PIL import Image, ImageTk
 
+#Call and execute all the varient tools and compile them at one place
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/db.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visuals.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/numeric.py").text)
