@@ -21,10 +21,26 @@ except ImportError:
 
 import requests
 from tkinter import *
+from tkinter import ttk
 from PIL import Image, ImageTk
 
-#Call and execute all the varient tools and compile them at one place
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/db.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visuals.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/numeric.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/window.py").text)
+#Function to compile all other files
+def call():
+    exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/db.py").text)
+    exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visuals.py").text)
+    exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/numeric.py").text)
+    exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/window.py").text)
+    load.destroy()
+    login_window()
+
+#Creating a Loading Popup to engage the user while compiling all other files
+def load()
+    load = Tk()
+    message_label = Label(load, text="Loading, please wait...")
+    message_label.pack(pady=10)
+    progress_bar = ttk.Progressbar(load, length=300, mode='indeterminate')
+    progress_bar.pack(pady=10)
+    progress_bar.start()
+    load.title("Loading")
+    call()
+    load.mainloop()
