@@ -39,7 +39,7 @@ def numeric_window():
         regiontren.pack_forget()
         backtren.pack_forget()
     
-    #On screen objects
+    #Redundant Objects
     citytren = Button(numeric, text= "City-Wise", font = "Arial 20 bold", bg="skyblue", command=trend)
     countrytren = Button(numeric, text= "Country-Wise", font = "Arial 20 bold", bg="skyblue", command=trend)
     regiontren = Button(numeric, text= "Region-Wise", font = "Arial 20 bold", bg="skyblue", command=trend)
@@ -54,7 +54,7 @@ def numeric_window():
     bk.image = test
     bk.place(x=0, y=0)
 
-    
+    #Labels and Buttons
     Label(numeric, text= 'Numeric Analysis', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
     tren = Button(numeric, text= "Trending", font = "Arial 20 bold", bg="skyblue", command=trend)
     Button(numeric, text = 'Exit', font = 'Arial 20 bold', bg='red', command=numeric.destroy).pack(side = BOTTOM,anchor = "se")    
