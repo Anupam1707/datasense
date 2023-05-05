@@ -30,6 +30,7 @@ def call():
     exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visuals.py").text)
     exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/numeric.py").text)
     exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/window.py").text)
+    progress_bar.stop()
     load.destroy()
     login_window()
 
@@ -43,4 +44,4 @@ def load()
     progress_bar.start()
     load.title("Loading")
     call()
-    load.mainloop()
+load()
