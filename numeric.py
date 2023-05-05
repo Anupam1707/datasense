@@ -1,4 +1,5 @@
 """This program is the Numeric Analysis Program"""
+
 from tkinter import *
 import requests
 from PIL import Image, ImageTk
@@ -10,12 +11,14 @@ countrytren = None
 regiontren = None
 backtren = None
 
+#Function to create and manage the Numeric Analysis Window
 def numeric_window():
-    global citytren, countrytren, regiontren, backtren  # Use global keyword to access global variables
+    global citytren, countrytren, regiontren, backtren  # Using global keyword to access global variables
     numeric = Tk()
     numeric.title("Numeric Analysis")
     numeric.geometry("1280x720")
     
+    #Function to Switch between windows
     def switch():
         numeric.destroy()
         home_window()
