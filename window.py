@@ -180,9 +180,3 @@ def graph_window():
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
     Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "sw")    
     graph.mainloop()
-    
-#progress_bar.stop()
-#load.destroy()
-
-#Calling the Login Page to Start the Program
-login_window()
