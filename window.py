@@ -15,7 +15,7 @@ def home_window():
         graph_window()
     def switchn():
         home.destroy()
-        graph_window()
+        numeric_window()
     def logout():
         with open("acc.txt", "w"):
             pass
