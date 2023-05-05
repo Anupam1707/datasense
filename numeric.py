@@ -50,5 +50,3 @@ def numeric_window():
     tren.pack()
     
     numeric.mainloop()
-
-numeric_window()
