@@ -1,3 +1,6 @@
+"""This program is the Graphing Program of the App."""
+
+#Function to compile multiple data in to a single format for graphing and analysis
 def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
     if rowno == None and alldata == None and colno != None:
         data = sheetname.col_values(colno)
@@ -21,12 +24,15 @@ def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
     
     return data
 
+#Function to get the average of data
 def avg(datalist):
     return sum(datalist)/len(datalist)
 
+#Function to get the total of a data
 def total(datalist):
     return sum(datalist)
 
+#Function to compile two data lists into a dictionary
 def dt(keys, values):
     dt = {}
     for key in keys:
@@ -38,6 +44,7 @@ def dt(keys, values):
         break
     return dt
 
+#Function to Plot Horizontal Bar Graph, Vertical Bar Graph and Histogram
 def plotb(*ls, t = "bv"):
     xval = []
     yval = []
@@ -54,20 +61,24 @@ def plotb(*ls, t = "bv"):
             
             ls[0].remove(ls[0][-1])
             ls[1].remove(ls[1][-1])
-
+    
+            #Vertical Bar Graph
             if t == "bv":
                 plt.bar(xval, yval, color = "blue")
                 plt.xlabel(x)
                 plt.ylabel(y)
                 plt.title("Industry Sales Analysis")
                 plt.show()
+                
+            #Horizontal Bar Graph
             elif t == "bh":
                 plt.barh(xval, yval, color = "blue")
                 plt.xlabel(y)
                 plt.ylabel(x)
                 plt.title("Industry Sales Analysis")
                 plt.show()
-      
+
+#Function to Plot a Pie Chart
 def pie(dt):
     labels = dt.keys()
         
