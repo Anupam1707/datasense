@@ -38,12 +38,14 @@ def numeric_window():
         countrytren.pack_forget()
         regiontren.pack_forget()
         backtren.pack_forget()
-
+    
+    #On screen objects
     citytren = Button(numeric, text= "City-Wise", font = "Arial 20 bold", bg="skyblue", command=trend)
     countrytren = Button(numeric, text= "Country-Wise", font = "Arial 20 bold", bg="skyblue", command=trend)
     regiontren = Button(numeric, text= "Region-Wise", font = "Arial 20 bold", bg="skyblue", command=trend)
     backtren = Button(numeric, text= "Back", font = "Arial 20 bold", bg="skyblue", command=untrend)
     
+    #Background Image
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
     img = Image.open(BytesIO(response.content))
     img = img.resize((1280,720), Image.LANCZOS)
