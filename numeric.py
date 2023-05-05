@@ -47,6 +47,8 @@ def numeric_window():
     
     Label(numeric, text= 'Numeric Analysis', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
     tren = Button(numeric, text= "Trending", font = "Arial 20 bold", bg="skyblue", command=trend)
+    Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
+    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "sw")
     tren.pack()
     
     numeric.mainloop()
