@@ -14,7 +14,11 @@ def numeric_window():
     numeric = Tk()
     numeric.title("Numeric Analysis")
     numeric.geometry("1280x720")
-
+    
+    def switch():
+        numeric.destroy()
+        home_window()
+    
     def trend():
         tren.pack_forget()
         
