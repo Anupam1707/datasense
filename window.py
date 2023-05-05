@@ -1,9 +1,13 @@
+"""This is the backbone of the App. This program creates a link between the front end and the back-end."""
+
+#Function to give values of the input to the graph plotter to plot the graph
 def pt():
     if l1v.get() != None and l2v.get() != None and typ.get() == "vertical bar graph":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bv")
     if l1v.get() != None and l2v.get() != None and typ.get() == "horizontal bar graph":
         plotb(data(sales, col[l1v.get().lower()]), data(sales, col[l2v.get().lower()]), t = "bh")
 
+#Function to create a Home Page
 def home_window():
     home = Tk()
     home.title("Home Page")
@@ -31,6 +35,7 @@ def home_window():
     
     home.mainloop()
     
+#Function to create a Signup Page
 def signup_window():
     usr = len(rows)+2
     try:
@@ -76,7 +81,7 @@ def signup_window():
     Button(signup, text = 'Go Back', font = 'Arial 20 bold', bg='red', command=switchlog).pack(side = BOTTOM,anchor = "sw")
     signup.mainloop()
  
-
+#Function to create a Login Page
 def login_window():
     lg = None
     usr = ""
@@ -139,6 +144,7 @@ def login_window():
     sign = Button(login, text= "Sign UP Instead", font = "Arial 20 bold", bg="skyblue", command=switchs).pack(pady = 30)
     login.mainloop()
     
+#Function to create a Visual Analysis Page
 def graph_window():
     global l1v
     global l2v
@@ -177,4 +183,6 @@ def graph_window():
     
 #progress_bar.stop()
 #load.destroy()
+
+#Calling the Login Page to Start the Program
 login_window()
