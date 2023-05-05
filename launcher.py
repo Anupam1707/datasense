@@ -35,7 +35,7 @@ def call():
     login_window()
 
 #Creating a Loading Popup to engage the user while compiling all other files
-def load()
+def load():
     load = Tk()
     message_label = Label(load, text="Loading, please wait...")
     message_label.pack(pady=10)
