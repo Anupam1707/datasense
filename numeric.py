@@ -1,3 +1,4 @@
+"""This program is the Numeric Analysis Program"""
 from tkinter import *
 import requests
 from PIL import Image, ImageTk
