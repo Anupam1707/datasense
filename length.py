@@ -7,9 +7,6 @@ urls = ["db.py",
         "visuals.py",
         "window.py",
         "numeric.py",
-        "voice.py",
-        "vcap.py",
-        "tools.py",
         "launcher.py"]
 
 sum = 0
