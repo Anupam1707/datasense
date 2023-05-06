@@ -27,6 +27,7 @@ def numeric_window():
             empty_home()
             trend_frame = Frame(numeric)
             trend_frame.pack(pady = 10)
+            trend_frame.config(bg="black")
 
             def untrend():
                 trend_frame.destroy()
@@ -42,6 +43,7 @@ def numeric_window():
             empty_home()
             most_sold_frame = Frame(numeric)
             most_sold_frame.pack(pady = 10)
+            most_sold_frame.config(bg="black")
 
             def unmost():
                 most_sold_frame.destroy()
@@ -58,6 +60,7 @@ def numeric_window():
             empty_home()
             pop_frame = Frame(numeric)
             pop_frame.pack(pady = 10)
+            pop_frame.config(bg="black")
 
             def unpop():
                 pop_frame.destroy()
