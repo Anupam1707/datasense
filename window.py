@@ -155,6 +155,7 @@ def graph_window():
     graph = Tk()
     graph.geometry("1280x720")
     graph.resizable(False,False)
+    graph.config(bg="black")
     
     def switch():
         graph.destroy()
