@@ -30,8 +30,8 @@ def home_window():
     Button(home, text = 'Visual Analysis', font = 'Arial 20 bold', bg='white', command=switchg).pack(pady=20)
     Button(home, text = 'Numeric Analysis', font = 'Arial 20 bold', bg='white', command=switchn).pack(pady=20)
     Button(home, text = "Help", font = "Arial 20 bold",bg = "white", command=switchn).pack(pady=20)
-    Button(home, text = 'Exit', font = 'Arial 20 bold', bg='red', command=home.destroy).pack(side = BOTTOM,anchor = "se")
-    Button(home, text = 'Log Out', font = 'Arial 20 bold', bg='red', command=logout).pack(side = BOTTOM,anchor = "sw")
+    Button(home, text = 'Exit', font = 'Arial 20 bold', bg='red', command=home.destroy).pack(side = RIGHT,anchor = "se")
+    Button(home, text = 'Log Out', font = 'Arial 20 bold', bg='red', command=logout).pack(side = LEFT,anchor = "sw")
     
     home.mainloop()
     
@@ -77,8 +77,8 @@ def signup_window():
         home_window()
         
     button = Button(signup, text="SignUP", font = "Arial 30 bold", command=signup_button).pack(side = TOP)
-    Button(signup, text = 'Exit', font = 'Arial 20 bold', bg='red', command=signup.destroy).pack(side = BOTTOM,anchor = "se")
-    Button(signup, text = 'Go Back', font = 'Arial 20 bold', bg='red', command=switchlog).pack(side = BOTTOM,anchor = "sw")
+    Button(signup, text = 'Exit', font = 'Arial 20 bold', bg='red', command=signup.destroy).pack(side = RIGHT,anchor = "se")
+    Button(signup, text = 'Go Back', font = 'Arial 20 bold', bg='red', command=switchlog).pack(side = LEFT,anchor = "sw")
     signup.mainloop()
  
 #Function to create a Login Page
@@ -177,7 +177,7 @@ def graph_window():
     l4 = Label(graph, text="Type of Graph", font= "Arial 30", fg = "black").pack()
     l4inp = OptionMenu(graph, typ, *tps).pack(expand = True)
     Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
-    Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = BOTTOM,anchor = "se")    
-    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = BOTTOM,anchor = "sw")    
+    Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = RIGHT,anchor = "se")    
+    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = LEFT,anchor = "sw")    
     graph.mainloop()
 login_window()
