@@ -88,4 +88,3 @@ def numeric_window():
     Button(numeric, text='Home', font='Arial 20 bold', bg='red', command=switchh).pack(side = LEFT, anchor = "sw")
     
     numeric.mainloop()
-numeric_window()
