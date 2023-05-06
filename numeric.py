@@ -9,11 +9,12 @@ def numeric_window():
     numeric.geometry("1280x720")
     #numeric.config(bg  = "white"
 
-    def switch():
+    def switchh():
         numeric.destroy()
         home_window()
     
     def trend_win():
+        tren.pack_forget()
         inner_frame = Frame(numeric)
         inner_frame.pack(pady = 10)
 
@@ -25,12 +26,7 @@ def numeric_window():
         Button(inner_frame, text="City-Wise", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
         Button(inner_frame, text="Country-Wise", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
         Button(inner_frame, text="Region-Wise", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-        Button(inner_frame, text="Back", font="Arial 20 bold", bg="skyblue", command=untrend).pack(pady = 10)
-
-    def trend():
-        tren.pack_forget()
-        trend_win()
-        
+        Button(inner_frame, text="Back", font="Arial 20 bold", bg="skyblue", command=untrend).pack(pady = 10)        
     
 ##    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
 ##    img = Image.open(BytesIO(response.content))
@@ -41,10 +37,10 @@ def numeric_window():
 ##    bk.place(x=0, y=0)
 
     Label(numeric, text='Numeric Analysis', font='Arial 35 bold', bg='#7676EE').pack(pady = 20)
-    tren = Button(numeric, text="Trending", font="Arial 20 bold", bg="skyblue", command=trend)
+    tren = Button(numeric, text="Trending", font="Arial 20 bold", bg="skyblue", command=trend_win)
     tren.pack(pady = 10)
     Button(numeric, text='Exit', font='Arial 20 bold', bg='red', command=numeric.destroy).pack(side = RIGHT, anchor = "se")
-    Button(numeric, text='Home', font='Arial 20 bold', bg='red', command=switch).pack(side = LEFT, anchor = "sw")
+    Button(numeric, text='Home', font='Arial 20 bold', bg='red', command=switchh).pack(side = LEFT, anchor = "sw")
     
     numeric.mainloop()
 numeric_window()
