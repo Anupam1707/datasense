@@ -7,7 +7,7 @@ def numeric_window():
     numeric = Tk()
     numeric.title("Numeric Analysis")
     numeric.geometry("1280x720")
-    #numeric.config(bg  = "white"
+    numeric.config(bg = "black")
 
     def empty_home():
         tren.pack_forget()
