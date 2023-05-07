@@ -165,6 +165,14 @@ def graph_window():
     graph.resizable(False,False)
     graph.config(bg="black")
     
+    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visual.jpg")
+    img = Image.open(BytesIO(response.content))
+    img = img.resize((1280,720), Image.LANCZOS)
+    test = ImageTk.PhotoImage(img)
+    bk = Label(image=test)
+    bk.image = test
+    bk.place(x=0, y=0)
+    
     def switch():
         graph.destroy()
         home_window()
