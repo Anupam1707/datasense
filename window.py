@@ -14,7 +14,7 @@ def home_window():
     home.geometry("1280x720")
     home.configure(bg = "black")
 
-    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
+    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/home.jpg")
     img = Image.open(BytesIO(response.content))
     img = img.resize((1280,720), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
