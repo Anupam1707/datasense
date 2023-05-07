@@ -7,7 +7,6 @@ def numeric_window():
     numeric = Tk()
     numeric.title("Numeric Analysis")
     numeric.geometry("1280x720")
-    numeric.config(bg = "black")
 
     def empty_home():
         tren.pack_forget()
@@ -25,53 +24,72 @@ def numeric_window():
     
     def trend_win():
             empty_home()
-            trend_frame = Frame(numeric)
-            trend_frame.pack(pady = 10)
-            trend_frame.config(bg="black")
 
             def untrend():
-                trend_frame.destroy()
+                l.pack_forget()
+                c.pack_forget()
+                ct.pack_forget()
+                r.pack_forget()
+                b.pack_forget()
                 show_home()
-                
-            Label(trend_frame, text="Trending Product on Basis of :", font = "Arial 30 bold").pack(pady = 10)
-            Button(trend_frame, text="City", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(trend_frame, text="Country", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(trend_frame, text="Region", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(trend_frame, text="Back", font="Arial 20 bold", bg="skyblue", command=untrend).pack(pady = 10)
+
+            l = Label(numeric, text="Trending Product on Basis of :", font="Arial 30 bold")
+            l.pack(pady=10)
+            c = Button(numeric, text="City", font="Arial 20 bold", bg="skyblue")
+            c.pack(pady=10)
+            ct = Button(numeric, text="Country", font="Arial 20 bold", bg="skyblue")
+            ct.pack(pady=10)
+            r = Button(numeric, text="Region", font="Arial 20 bold", bg="skyblue")
+            r.pack(pady=10)
+            b = Button(numeric, text="Back", font="Arial 20 bold", bg="skyblue", command=untrend)
+            b.pack(pady=10)
+
 
     def most_sold_win():
             empty_home()
-            most_sold_frame = Frame(numeric)
-            most_sold_frame.pack(pady = 10)
-            most_sold_frame.config(bg="black")
 
             def unmost():
-                most_sold_frame.destroy()
+                l.pack_forget()
+                c.pack_forget()
+                ct.pack_forget()
+                r.pack_forget()
+                b.pack_forget()
                 show_home()
-
-            Label(most_sold_frame, text="Most Sold Products in :", font = "Arial 30 bold").pack(pady = 10)
-            Button(most_sold_frame, text="City", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(most_sold_frame, text="Country", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(most_sold_frame, text="Region", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(most_sold_frame, text="Back", font="Arial 20 bold", bg="skyblue", command=unmost).pack(pady = 10)
+            
+            l = Label(numeric, text="Most Sold Product on Basis of :", font="Arial 30 bold")
+            l.pack(pady=10)
+            c = Button(numeric, text="City", font="Arial 20 bold", bg="skyblue")
+            c.pack(pady=10)
+            ct = Button(numeric, text="Country", font="Arial 20 bold", bg="skyblue")
+            ct.pack(pady=10)
+            r = Button(numeric, text="Region", font="Arial 20 bold", bg="skyblue")
+            r.pack(pady=10)
+            b = Button(numeric, text="Back", font="Arial 20 bold", bg="skyblue", command=unmost)
+            b.pack(pady=10)
 
 
     def pop_win():
             empty_home()
-            pop_frame = Frame(numeric)
-            pop_frame.pack(pady = 10)
-            pop_frame.config(bg="black")
 
             def unpop():
-                pop_frame.destroy()
+                l.pack_forget()
+                c.pack_forget()
+                ct.pack_forget()
+                r.pack_forget()
+                b.pack_forget()
                 show_home()
                 
-            Label(pop_frame, text="Popular Product on Basis of :", font = "Arial 30 bold").pack(pady = 10)
-            Button(pop_frame, text="City", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(pop_frame, text="Country", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(pop_frame, text="Region", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
-            Button(pop_frame, text="Back", font="Arial 20 bold", bg="skyblue", command=unpop).pack(pady = 10)
-        
+            l = Label(numeric, text="Popular Product on Basis of :", font="Arial 30 bold")
+            l.pack(pady=10)
+            c = Button(numeric, text="City", font="Arial 20 bold", bg="skyblue")
+            c.pack(pady=10)
+            ct = Button(numeric, text="Country", font="Arial 20 bold", bg="skyblue")
+            ct.pack(pady=10)
+            r = Button(numeric, text="Region", font="Arial 20 bold", bg="skyblue")
+            r.pack(pady=10)
+            b = Button(numeric, text="Back", font="Arial 20 bold", bg="skyblue", command=unpop)
+            b.pack(pady=10)
+            
     response = requests.get("https://images.pexels.com/photos/7135121/pexels-photo-7135121.jpeg?cs=srgb&dl=pexels-codioful-%28formerly-gradienta%29-7135121.jpg")
     img = Image.open(BytesIO(response.content))
     img = img.resize((1280,720), Image.LANCZOS)
