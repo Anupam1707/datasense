@@ -72,13 +72,13 @@ def numeric_window():
             Button(pop_frame, text="Region", font="Arial 20 bold", bg="skyblue").pack(pady = 10)
             Button(pop_frame, text="Back", font="Arial 20 bold", bg="skyblue", command=unpop).pack(pady = 10)
         
-##    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/bg.jpg")
-##    img = Image.open(BytesIO(response.content))
-##    img = img.resize((1280,720), Image.LANCZOS)
-##    test = ImageTk.PhotoImage(img)
-##    bk = Label(image=test)
-##    bk.image = test
-##    bk.place(x=0, y=0)
+    response = requests.get("https://images.pexels.com/photos/7135121/pexels-photo-7135121.jpeg?cs=srgb&dl=pexels-codioful-%28formerly-gradienta%29-7135121.jpg")
+    img = Image.open(BytesIO(response.content))
+    img = img.resize((1280,720), Image.LANCZOS)
+    test = ImageTk.PhotoImage(img)
+    bk = Label(image=test)
+    bk.image = test
+    bk.place(x=0, y=0)
 
     Label(numeric, text='Numeric Analysis', font='Arial 35 bold', bg='#7676EE').pack(pady = 20)
     tren = Button(numeric, text="Trending", font="Arial 20 bold", bg="skyblue", command=trend_win)
