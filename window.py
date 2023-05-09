@@ -3,6 +3,8 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageDraw
+from io import BytesIO
+
 #Function to give values of the input to the graph plotter to plot the graph
 def pt():
     if l1v.get() != None and l2v.get() != None and typ.get() == "vertical bar graph":
