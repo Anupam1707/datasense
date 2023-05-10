@@ -4,7 +4,7 @@
   <body>
     <h1>Meal Metrics</h1>
     <p>The purpose of this project is to develop a Python app that can analyze the sales data of the food industry, stored in Google Sheets. The app provides both visual and numeric analysis of the data and offers a GUI interface for users to access and analyze the data directly from Google Sheets without any delays.</p>
-    <h2>Libraries and APIs Used</h2>
+    <h2><b>Libraries and APIs Used</b></h2>
     <ul>
       <li>oauth2client module to authorize the user to the Google Database</li>
       <li>Google Drive API and Google Sheets API to create a link between the user and the Google Sheet</li>
@@ -13,7 +13,7 @@
       <li>Matplotlib to create graphs and visualizations of the data</li>
       <li>requests library, Python Image Library (PIL), and Input/Output(io) library for GUI enhancement and data handling.</li>
     </ul>
-    <h2>Features Offered</h2>
+    <h2><b>Features Offered</b></h2>
     <ol>
       <li>GUI interface for accessing and analyzing sales data: Users can access the sales data directly from Google Sheets through a GUI interface, and choose between visual or numeric analysis of the data.</li>
       <li>Visual analysis of sales data: The app uses Matplotlib to create graphs and visualizations of the sales data, such as bar charts, histograms, etc according to the parameters selected by the user.</li>
