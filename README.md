@@ -1,41 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Meal Metrics</title>
-    <style>
-      /* CSS styles go here */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      h1 {
-        text-align: center;
-        margin-top: 50px;
-        color: #333;
-      }
-      h2 {
-        font-size: 1.5em;
-        margin-top: 30px;
-        color: #666;
-      }
-      p {
-        line-height: 1.5;
-        color: #333;
-      }
-      ul {
-        list-style-type: circle;
-        margin-left: 20px;
-      }
-      ol {
-        list-style-type: decimal;
-        margin-left: 20px;
-      }
-      li {
-        margin-bottom: 5px;
-      }
-    </style>
-  </head>
+  <head></head>
   <body>
     <h1>Meal Metrics</h1>
     <p>The purpose of this project is to develop a Python app that can analyze the sales data of the food industry, stored in Google Sheets. The app provides both visual and numeric analysis of the data and offers a GUI interface for users to access and analyze the data directly from Google Sheets without any delays.</p>
