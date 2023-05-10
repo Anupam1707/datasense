@@ -3,6 +3,7 @@
 
 import requests
 
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/crypter.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/db.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visuals.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/numeric.py").text)
