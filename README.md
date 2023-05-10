@@ -32,6 +32,5 @@
       <li>Some quick suggestions based on the analysis</li>
     </ol>
     <p>Users can use this output to gain insights into the sales data of the food industry</p>
-  <\body>
 </html>
    
