@@ -84,7 +84,7 @@ def signup_window():
         worksheet.update_cell(usr,4,"Researcher")
         
         with open("acc.txt","w") as w:
-                w.write(f"{username_entry.get()} IN")
+                w.write(f"{encrypt(username_entry.get(), "mealmetrics")}")
                
         signup.destroy()
         home_window()
@@ -103,9 +103,9 @@ def login_window():
             d = a.readlines()
             if d:
                 d[0] = d[0].split()
-                if d[0][1] == "IN":
-                    lg = True
-                    usr = d[0][0]
+                lg = True
+                usr = decrypt(f"{d[0][0]}")
+                
     except FileNotFoundError:
         with open("acc.txt","w") as w:
             pass
