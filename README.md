@@ -1,4 +1,4 @@
-![logo](https://github.com/Anupam1707/food-sales-analysis/assets/96910096/065fe0b0-2b44-4380-9c7d-ecbbf5a3d307)
+![logo](https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/logo.png)
 <!DOCTYPE html>
 <html>
   <head>
