@@ -32,5 +32,6 @@
       <li>Some quick suggestions based on the analysis</li>
     </ol>
     <p>Users can use this output to gain insights into the sales data of the food industry</p>
+    <p>Overall, the Food Sales Analysis App provides a user-friendly interface for accessing and analyzing sales data stored in Google Sheets and offers a range of analytical tools for visualizing and interpreting the data.</p>
 </html>
    
