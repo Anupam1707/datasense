@@ -82,9 +82,9 @@ def signup_window():
         worksheet.update_cell(usr,2,password_entry.get()) 
         worksheet.update_cell(usr,3,"IN")
         worksheet.update_cell(usr,4,"Researcher")
-        
+        usr = encrypt(username_entry.get(), "mealmetrics")
         with open("acc.txt","w") as w:
-                w.write(f"{encrypt(username_entry.get(), "mealmetrics")}")
+                w.write(f"{usr}")
                
         signup.destroy()
         home_window()
