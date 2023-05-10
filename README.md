@@ -15,14 +15,14 @@
     </ul>
     <h2><b>Features Offered</b></h2>
     <ol>
-      <li>GUI interface for accessing and analyzing sales data: Users can access the sales data directly from Remote Database through a GUI interface, and choose between visual or numeric analysis of the data.</li>
-      <li>Visual analysis of sales data: The app uses <b>Matplotlib</b> to create graphs and visualizations of the sales data, such as bar charts, histograms, etc according to the parameters selected by the user.</li>
-      <li>Numeric analysis of sales data: The app uses <b>NumPy</b> to perform numerical analysis of the sales data, such as calculating the mean, median, mode, or standard deviation of the data.</li>
-      <li>AI-Based Suggestions of Analysis: The app is integrated with AI to provide suggestions based on the analysis of the sales data to enhance production and sales.</li>
+      <li><b>GUI interface</b> for accessing and analyzing sales data: Users can access the sales data directly from Remote Database through a GUI interface, and choose between visual or numeric analysis of the data.</li>
+      <li><b>Visual analysis</b> of sales data: The app uses <b>Matplotlib</b> to create graphs and visualizations of the sales data, such as bar charts, histograms, etc according to the parameters selected by the user.</li>
+      <li><b>Numeric analysis</b> of sales data: The app uses <b>NumPy</b> to perform numerical analysis of the sales data, such as calculating the mean, median, mode, or standard deviation of the data.</li>
+      <li><b>AI-Based</b> Suggestions of Analysis: The app is integrated with AI to provide suggestions based on the analysis of the sales data to enhance production and sales.</li>
       <li>Data export: The app will allow users to export the analyzed data in various formats, such as:</li>
       <ul>
-        <li>Graphs: JPG, JPEG, PNG.</li>
-        <li>Selected Data: CSV, Excel.</li>
+        <li>Graphs: <b>JPG, JPEG, PNG.</b></li>
+        <li>Selected Data: <b>CSV, Excel.</b></li>
       </ul>
     </ol>
     <p>The expected output of the app will be either of these:</p>
