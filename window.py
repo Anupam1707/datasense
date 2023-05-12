@@ -145,7 +145,9 @@ def login_window():
             login.destroy() 
             home_window()
             with open("acc.txt","w") as w:
-                w.write(f"{encrypt(user, 'mealmetrics')}")
+                user = encrypt(user, 'mealmetrics')
+                w.write(f"{user}")
+                
             error_label = Label(login, text="Incorrect username or password",font = "Arial 30", fg="red")
             error_label.pack()
 
