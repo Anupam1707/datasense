@@ -99,7 +99,7 @@ def login_window():
     lg = None
     usr = ""
     try:
-        with open("acc.txt", "r") as a:
+        with open("acc.txt", "r", encoding = "utf-8") as a:
             d = a.readlines()
             if d:
                 d[0] = d[0].split()
@@ -144,7 +144,7 @@ def login_window():
             welcome = Label(login, text=f"Welcome back {username_entry.get()}", font="Arial 30", fg = "blue").pack()
             login.destroy() 
             home_window()
-            with open("acc.txt","w") as w:
+            with open("acc.txt","w", encoding = "utf-8") as w:
                 user = encrypt(user, 'mealmetrics')
                 w.write(user)
         else:
