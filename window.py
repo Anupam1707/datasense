@@ -52,7 +52,7 @@ def home_window():
 def signup_window():
     usr = len(rows)+2
     try:
-        with open("acc.txt", "r") as a:
+        with open("acc.txt", "r", encoding = "utf-8") as a:
             d = a.readlines()
     except FileNotFoundError:
         with open("acc.txt","w") as w:
@@ -83,7 +83,7 @@ def signup_window():
         worksheet.update_cell(usr,3,"IN")
         worksheet.update_cell(usr,4,"Researcher")
         usr = encrypt(username_entry.get(), "mealmetrics")
-        with open("acc.txt","w") as w:
+        with open("acc.txt","w", encoding = "utf-8") as w:
                 w.write(f"{usr}")
                
         signup.destroy()
