@@ -26,16 +26,22 @@ def numeric_window():
             empty_home()
 
             def untrend():
+                utrend()
+                show_home()
+                
+            def utrend():
                 l.pack_forget()
                 c.pack_forget()
                 ct.pack_forget()
                 r.pack_forget()
                 b.pack_forget()
-                show_home()
+
+            def city():
+                utrend()
 
             l = Label(numeric, text="Trending Product on Basis of :", font="Arial 30 bold")
             l.pack(pady=10)
-            c = Button(numeric, text="City", font="Arial 20 bold", bg="skyblue")
+            c = Button(numeric, text="City", font="Arial 20 bold", bg="skyblue", command=city)
             c.pack(pady=10)
             ct = Button(numeric, text="Country", font="Arial 20 bold", bg="skyblue")
             ct.pack(pady=10)
