@@ -2,6 +2,10 @@ from tkinter import *
 import requests
 from PIL import Image, ImageTk
 from io import BytesIO
+from PyFetch import *
+
+exec(food("db.py"))
+#exec(food("visuals.py"))
 
 def numeric_window():
     numeric = Tk()
@@ -32,19 +36,37 @@ def numeric_window():
             def utrend():
                 l.pack_forget()
                 c.pack_forget()
-                ct.pack_forget()
                 r.pack_forget()
                 b.pack_forget()
 
             def city():
                 utrend()
 
+##                cityu = []
+##                cities = data(sales, colno = col["city"])
+##
+##                for i in cities:
+##                    while i not in cityu:
+##                        cityu.append(i)
+##                cityu.remove(cityu[-1])
+##                cities = cityu
+##                cityu = None
+                
+                formula = "=COUNTIFS(D2:D245,D2,F2:F245,F2)"
+                sales.update_cell(1, 10, formula)
+                result = sales.cell(1, 10).value
+                
+                lb = Label(numeric, text=f"Trending Product in Boston is {result}", font="Arial 30 bold")
+                
+                lb.pack(pady = 10)
+                
+                back = Button(numeric, text = "Back", font = "Arial 20 bold", bg = "skyblue", command = trend_win)
+                back.pack(pady = 10)
+
             l = Label(numeric, text="Trending Product on Basis of :", font="Arial 30 bold")
             l.pack(pady=10)
             c = Button(numeric, text="City", font="Arial 20 bold", bg="skyblue", command=city)
             c.pack(pady=10)
-            ct = Button(numeric, text="Country", font="Arial 20 bold", bg="skyblue")
-            ct.pack(pady=10)
             r = Button(numeric, text="Region", font="Arial 20 bold", bg="skyblue")
             r.pack(pady=10)
             b = Button(numeric, text="Back", font="Arial 20 bold", bg="skyblue", command=untrend)
@@ -66,14 +88,11 @@ def numeric_window():
             l.pack(pady=10)
             c = Button(numeric, text="City", font="Arial 20 bold", bg="skyblue")
             c.pack(pady=10)
-            ct = Button(numeric, text="Country", font="Arial 20 bold", bg="skyblue")
-            ct.pack(pady=10)
             r = Button(numeric, text="Region", font="Arial 20 bold", bg="skyblue")
             r.pack(pady=10)
             b = Button(numeric, text="Back", font="Arial 20 bold", bg="skyblue", command=unmost)
             b.pack(pady=10)
-
-
+            
     def pop_win():
             empty_home()
 
@@ -89,8 +108,6 @@ def numeric_window():
             l.pack(pady=10)
             c = Button(numeric, text="City", font="Arial 20 bold", bg="skyblue")
             c.pack(pady=10)
-            ct = Button(numeric, text="Country", font="Arial 20 bold", bg="skyblue")
-            ct.pack(pady=10)
             r = Button(numeric, text="Region", font="Arial 20 bold", bg="skyblue")
             r.pack(pady=10)
             b = Button(numeric, text="Back", font="Arial 20 bold", bg="skyblue", command=unpop)
