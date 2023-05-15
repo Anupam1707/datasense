@@ -2,10 +2,6 @@ from tkinter import *
 import requests
 from PIL import Image, ImageTk
 from io import BytesIO
-from PyFetch import *
-
-exec(food("db.py"))
-#exec(food("visuals.py"))
 
 def numeric_window():
     numeric = Tk()
@@ -40,28 +36,55 @@ def numeric_window():
                 b.pack_forget()
 
             def city():
-                utrend()
+                    utrend()
 
-##                cityu = []
-##                cities = data(sales, colno = col["city"])
-##
-##                for i in cities:
-##                    while i not in cityu:
-##                        cityu.append(i)
-##                cityu.remove(cityu[-1])
-##                cities = cityu
-##                cityu = None
-                
-                formula = "=COUNTIFS(D2:D245,D2,F2:F245,F2)"
-                sales.update_cell(1, 10, formula)
-                result = sales.cell(1, 10).value
-                
-                lb = Label(numeric, text=f"Trending Product in Boston is {result}", font="Arial 30 bold")
-                
-                lb.pack(pady = 10)
-                
-                back = Button(numeric, text = "Back", font = "Arial 20 bold", bg = "skyblue", command = trend_win)
-                back.pack(pady = 10)
+                    dt = {}
+                    cityu = []
+                    produ = []
+                    mxp = ""
+                    mx = 0
+                    cities = data(sales, colno = col["city"])
+                    products = data(sales, colno = col["product"])
+
+                    for city in cities:
+                        while city not in cityu:
+                            cityu.append(city)
+                    cityu.remove(cityu[-1])
+                    cities = cityu
+                    cityu = None
+
+                    for product in products:
+                        while product not in produ:
+                            produ.append(product)
+                    produ.remove(produ[-1])
+                    products = produ
+                    produ = None
+
+                    ct = Frame(numeric, bg = "white")
+                    wait = Label(ct, text = "Analyzing Data....\nWe appreciate your patience", font = "Arial 30 bold")
+                    wait.pack(pady = 10)
+
+                    for city in cities:
+                        mx = 0
+                        mxp = ""
+                        dt = {}
+                        dt[city] = []
+                        
+                        for product in products:
+                            formula = f'=COUNTIFS(D2:D245, "{city}", F2:F245, "{product}")'
+                            sales.update_cell(1, 10, formula)
+                            result = int(sales.cell(1, 10).value)
+                            dt[city].append([product, result])
+                            print(city, product, type(result), result)
+                        print(dt)
+                        for value in dt[city]:
+                            if value[1] >= mx:
+                                    mx = value[1]
+                                    mxp = value[0]
+                        Label(numeric, text=f"Trending Product in {city} is {mxp}", font="Arial 30 bold").pack()
+                            
+                    back = Button(numeric, text = "Back", font = "Arial 20 bold", bg = "skyblue", command = trend_win)
+                    back.pack(pady = 10)
 
             l = Label(numeric, text="Trending Product on Basis of :", font="Arial 30 bold")
             l.pack(pady=10)
