@@ -31,7 +31,7 @@ SHEET_ID = '1bfWtrQHfo4Il-wWeIJ_qPJUf8ccZFsjLhdPSuCHlRdA'
 #Check if the connection has been established or not
 try:
     spreadsheet = gc.open_by_key(SHEET_ID)
-except gspread.exceptions.APIError or ConnectionError as e:
+except as e:
     print("Error: Could not connect to the database. Reason:", e)
     
 #Store redundant data into variables
