@@ -4,6 +4,7 @@ import os
 url = "https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/"
 
 urls = ["db.py",
+        "crypter.py",
         "visuals.py",
         "window.py",
         "numeric.py",
