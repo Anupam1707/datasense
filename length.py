@@ -4,7 +4,6 @@ import os
 url = "https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/"
 
 urls = ["db.py",
-        "crypter.py",
         "visuals.py",
         "window.py",
         "numeric.py",
@@ -16,9 +15,9 @@ d = []
 
 for i in urls:
     d = (requests.get(url + i)).text
-    with open("len.txt","w", newline = "") as f:
+    with open("len.txt","w", newline = "", encoding = "utf-8") as f:
         f.write(d)
-    with open("len.txt","r") as f:
+    with open("len.txt","r", encoding = "utf-8") as f:
         sum += len(f.readlines())
 
 os.remove("len.txt")
