@@ -15,11 +15,11 @@ for i in range(len(creds)):
 #Authorizing with Google Sheets
 credentials = ServiceAccountCredentials.from_json_keyfile_dict(creds, scope)
 gc = gspread.authorize(credentials)
-SHEET_ID = '1bfWtrQHfo4Il-wWeIJ_qPJUf8ccZFsjLhdPSuCHlRdA'
+SHEET_ID = 'Վշշճ֑ևյժտւ\u0557զցԾ֓մպխլոքճէժշՔրովը\u058cսկօչակ֒\u0558լ֎իշդԽĵĭĩĴĵĭļĺıīĻĵĭĩĴĵĭļĺıīĻĵĭĩĴĵĭļĺıīĻĵĭĩĴĵĭļĺıīĻĵ'
 
 #Check if the connection has been established or not
 try:
-    spreadsheet = gc.open_by_key(SHEET_ID)
+    spreadsheet = gc.open_by_key(decrypt(SHEET_ID))
 except :
     print("Error: Could not connect to the database")
     
