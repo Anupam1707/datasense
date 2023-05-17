@@ -5,6 +5,7 @@ url = "https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/"
 
 urls = ["db.py",
         "visuals.py",
+        "crypter.py",
         "window.py",
         "numeric.py",
         "launcher.py"]
