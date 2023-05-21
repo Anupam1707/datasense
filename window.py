@@ -34,7 +34,7 @@ def home_window():
         home.destroy()
         numeric_window()
     def logout():
-        with open("acc.txt", "w"):
+        with open("acc.tiak", "w"):
             pass
         home.destroy()
         login_window()
@@ -52,10 +52,10 @@ def home_window():
 def signup_window():
     usr = len(rows)+2
     try:
-        with open("acc", "r", encoding = "utf-8") as a:
+        with open("acc.tiak", "r", encoding = "utf-8") as a:
             d = a.readlines()
     except FileNotFoundError:
-        with open("acc","w") as w:
+        with open("acc.tiak","w") as w:
             pass
     
     signup = Tk()
@@ -83,7 +83,7 @@ def signup_window():
         worksheet.update_cell(usr,3,"IN")
         worksheet.update_cell(usr,4,"Researcher")
         usr = encrypt(username_entry.get(), "mealmetrics")
-        with open("acc.txt","w", encoding = "utf-8") as w:
+        with open("acc.tiak","w", encoding = "utf-8") as w:
                 w.write(f"{usr}")
                
         signup.destroy()
@@ -99,7 +99,7 @@ def login_window():
     lg = None
     usr = ""
     try:
-        with open("acc", "r", encoding = "utf-8") as a:
+        with open("acc.tiak", "r", encoding = "utf-8") as a:
             d = a.readlines()
             if d:
                 d[0] = d[0].split()
@@ -107,7 +107,7 @@ def login_window():
                 usr = decrypt(f"{d[0][0]}")
                 
     except FileNotFoundError:
-        with open("acc","w") as w:
+        with open("acc.tiak","w") as w:
             pass
     def switch():
         login.destroy()
@@ -144,7 +144,7 @@ def login_window():
             welcome = Label(login, text=f"Welcome back {username_entry.get()}", font="Arial 30", fg = "blue").pack()
             login.destroy() 
             home_window()
-            with open("acc","w", encoding = "utf-8") as w:
+            with open("acc.tiak","w", encoding = "utf-8") as w:
                 user = encrypt(user, 'mealmetrics')
                 w.write(user)
         else:
