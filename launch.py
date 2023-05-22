@@ -1,4 +1,4 @@
-#AI Assistant Launcher
+#DataBase Analyzer Launcher
 """This Program is compiles all the tools required by AI and Launches the AI Assistant"""
 
 try:
@@ -18,7 +18,9 @@ try :
     import SecuriPy
 except ImportError:
     import os
-    os.system("pip install gspread oath2client SecuriPy")
+    os.system("pip install gspread")
+    os.system("pip install oath2client")
+    os.system("pip install SecuriPy")
 try:
   import requests
 except ImportError:
