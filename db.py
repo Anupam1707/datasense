@@ -1,6 +1,13 @@
 """This program helps to create a link between the Google Sheets Database and the App"""
-
 #Import Required Libraries
+try :
+    import gspread
+    from oauth2client.service_account import ServiceAccountCredentials
+    import SecuriPy
+except ImportError:
+    import os
+    os.system("pip install gspread oath2client SecuriPy")
+    
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import SecuriPy
