@@ -82,7 +82,7 @@ def signup_window():
         worksheet.update_cell(usr,2,password_entry.get()) 
         worksheet.update_cell(usr,3,"IN")
         worksheet.update_cell(usr,4,"Researcher")
-        usr = encrypt(username_entry.get(), "mealmetrics")
+        usr = SecuriPy.encrypt(username_entry.get(), "mealmetrics")
         with open("acc.tiak","w", encoding = "utf-8") as w:
                 w.write(f"{usr}")
                
@@ -104,7 +104,7 @@ def login_window():
             if d:
                 d[0] = d[0].split()
                 lg = True
-                usr = decrypt(f"{d[0][0]}")
+                usr = SecuriPy.decrypt(f"{d[0][0]}")
                 
     except FileNotFoundError:
         with open("acc.tiak","w") as w:
@@ -145,7 +145,7 @@ def login_window():
             login.destroy() 
             home_window()
             with open("acc.tiak","w", encoding = "utf-8") as w:
-                user = encrypt(user, 'mealmetrics')
+                user = SecuriPy.encrypt(user, 'mealmetrics')
                 w.write(user)
         else:
             error_label = Label(login, text="Incorrect username or password",font = "Arial 30", fg="red")
