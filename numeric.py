@@ -1,9 +1,3 @@
-try:
-    from PIL import Image, ImageTk
-except ImportError:
-    import os
-    os.system("pip install pillow")
-    
 from tkinter import *
 import requests
 from PIL import Image, ImageTk
