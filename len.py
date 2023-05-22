@@ -7,7 +7,7 @@ urls = ["db.py",
         "visuals.py",
         "window.py",
         "numeric.py",
-        "launcher.py"]
+        "launch.py"]
 
 sum = 0
 
@@ -19,7 +19,6 @@ for i in urls:
         f.write(d)
     with open("len.txt","r", encoding = "utf-8") as f:
         sum += len(f.readlines())
-        print(i, len(f.readlines()))
 
 os.remove("len.txt")
 print(sum)
