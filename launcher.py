@@ -2,6 +2,24 @@
 """This Program is compiles all the tools required by AI and Launches the AI Assistant"""
 
 try:
+    from PIL import Image, ImageTk
+except ImportError:
+    import os
+    os.system("pip install pillow")
+try :
+    import numpy as np
+    import matplotlib.pyplot as plt
+except ImportError:
+    import os
+    os.system("pip install numpy matplotlib")
+try :
+    import gspread
+    from oauth2client.service_account import ServiceAccountCredentials
+    import SecuriPy
+except ImportError:
+    import os
+    os.system("pip install gspread oath2client SecuriPy")
+try:
   import requests
 except ImportError:
   import os
