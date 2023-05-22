@@ -1,5 +1,11 @@
 """This program is the Graphing Program of the App."""
-
+try :
+    import numpy as np
+    import matplotlib.pyplot as plt
+except ImportError:
+    import os
+    os.system("pip install numpy matplotlib")
+    
 import numpy as np
 import matplotlib.pyplot as plt
 #Function to compile multiple data in to a single format for graphing and analysis
