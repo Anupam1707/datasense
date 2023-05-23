@@ -5,7 +5,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk, ImageDraw
 from io import BytesIO
 import SecuriPy
-
+import requests
 #Function to give values of the input to the graph plotter to plot the graph
 def pt():
     if l1v.get() != None and l2v.get() != None and typ.get() == "vertical bar graph":
@@ -228,6 +228,29 @@ def export_window():
     def num():
         n.pack_forget()
         v.pack_forget()
+
+        def switchh():
+            export.destroy()
+            export_window()
+
+        def row():
+            r.pack_forget()
+            c.pack_forget()
+    
+            back =  Button(export, text = "Back", font = "Arial 20 bold", bg = "skyblue", command=switchh)
+            back.pack(pady =10)
+            
+        def column():
+            r.pack_forget()
+            c.pack_forget()
+
+            back =  Button(export, text = "Back", font = "Arial 20 bold", bg = "skyblue", command=switchh)
+            back.pack(pady = 10)
+
+        r = Button(export, text = "Export Rows", font = "Arial 20 bold", bg = "skyblue", command=row)
+        r.pack(pady = 10)
+        c = Button(export, text = "Export Columns", font = "Arial 20 bold", bg = "skyblue", command=column)
+        c.pack(pady = 10)
         
     n = Button(export, text = "Numeric Export", font = "Arial 20 bold", bg = "skyblue", command=num)
     n.pack(pady = 10)
