@@ -24,7 +24,7 @@ The app utilizes the following libraries and APIs:
    - Graphs: **JPEG, PNG.**
    - Selected Data: **CSV, ANY SPREADSHEET.**
 
-The expected output of the app can be one of the following:
+The expected outcomes may be one of the following:
 
 1. A graph plotted based on the selected parameters.
 2. Numeric data corresponding to the analysis performed.
