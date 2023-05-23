@@ -21,7 +21,7 @@ The app utilizes the following libraries and APIs:
 3. **Numeric analysis** of sales data: The app uses **NumPy** to perform numerical analysis of the sales data, such as calculating the mean, median, mode, or standard deviation of the data.
 4. **AI-Based** Suggestions of Analysis: The app is integrated with AI to provide suggestions based on the analysis of the sales data to enhance production and sales.
 5. **Data export**: The app allows users to export the analyzed data in various formats, such as:
-   - Graphs: **JPG, JPEG, PNG.**
+   - Graphs: **JPEG, PNG.**
    - Selected Data: **CSV, Excel.**
 
 The expected output of the app can be one of the following:
