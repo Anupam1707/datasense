@@ -33,3 +33,5 @@ The expected outcomes may be one of the following:
 Users can enhance their work culture into the sales data of their industry with latest future technologies.
 
 Overall, the Data Sense app provides a user-friendly interface for accessing and analyzing sales data stored in the Remote Database and offers a range of analytical tools for visualizing and interpreting the data.
+
+#Explore & Enjoy!!!!!!
