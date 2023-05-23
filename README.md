@@ -1,15 +1,20 @@
-# Meal Metrics
+Sure, here's the modified version:
 
-The purpose of this project is to develop a Python app that can analyze the sales data of the food industry, stored in Remote Database. The app provides both visual and numeric analysis of the data and offers a GUI interface for users to access and analyze the data directly from the Remote Database without any delays.
+# Database Analyzer
+
+The purpose of this project is to develop a Python app, named Database Analyzer, that can analyze the sales data of the food industry stored in a Remote Database. The app provides both visual and numeric analysis of the data and offers a GUI interface for users to access and analyze the data directly from the Remote Database without any delays.
 
 ## Libraries and APIs Used
 
-- **oauth2client** module to authorize the user to the Google Database
-- **Google Drive API** and **Google Sheets API** to create a link between the user and the Google Sheet
-- **gspread** module to access the sales data from the Remote Database
-- **NumPy** to perform numerical analysis on the data
-- **Matplotlib** to create graphs and visualizations of the data
+The app utilizes the following libraries and APIs:
+
+- **oauth2client** module to authorize the user to the Google Database.
+- **Google Drive API** and **Google Sheets API** to create a link between the user and the Google Sheet.
+- **gspread** module to access the sales data from the Remote Database.
+- **NumPy** for performing numerical analysis on the data.
+- **Matplotlib** for creating graphs and visualizations of the data.
 - **requests** library, **Python Image Library (PIL)**, and **Input/Output(io)** library for GUI enhancement and data handling.
+- **SecuriPy**, a library developed by the app's developer, for security-related functionalities.
 
 ## Features Offered
 
@@ -17,16 +22,16 @@ The purpose of this project is to develop a Python app that can analyze the sale
 2. **Visual analysis** of sales data: The app uses **Matplotlib** to create graphs and visualizations of the sales data, such as bar charts, histograms, etc., according to the parameters selected by the user.
 3. **Numeric analysis** of sales data: The app uses **NumPy** to perform numerical analysis of the sales data, such as calculating the mean, median, mode, or standard deviation of the data.
 4. **AI-Based** Suggestions of Analysis: The app is integrated with AI to provide suggestions based on the analysis of the sales data to enhance production and sales.
-5. **Data export**: The app will allow users to export the analyzed data in various formats, such as:
+5. **Data export**: The app allows users to export the analyzed data in various formats, such as:
    - Graphs: **JPG, JPEG, PNG.**
    - Selected Data: **CSV, Excel.**
 
-The expected output of the app will be either of these:
+The expected output of the app can be one of the following:
 
-1. A graph plotted on given parameters
-2. Numeric data according to the analysis
-3. Some quick suggestions based on the analysis
+1. A graph plotted based on the selected parameters.
+2. Numeric data corresponding to the analysis performed.
+3. Quick suggestions based on the analysis.
 
-Users can use this output to gain insights into the sales data of the food industry.
+Users can utilize this output to gain insights into the sales data of the food industry.
 
-Overall, the Meal Metrics App provides a user-friendly interface for accessing and analyzing sales data stored in the Remote Database and offers a range of analytical tools for visualizing and interpreting the data.
+Overall, the Database Analyzer app provides a user-friendly interface for accessing and analyzing sales data stored in the Remote Database and offers a range of analytical tools for visualizing and interpreting the data.
