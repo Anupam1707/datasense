@@ -21,4 +21,4 @@ for i in urls:
         sum += len(f.readlines())
 
 os.remove("len.txt")
-print(f"{sum} lines")
+print(f"{sum} lines and coding")
