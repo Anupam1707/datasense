@@ -34,4 +34,4 @@ Users can enhance their work culture into the sales data of their industry with 
 
 Overall, the Data Sense app provides a user-friendly interface for accessing and analyzing sales data stored in the Remote Database and offers a range of analytical tools for visualizing and interpreting the data.
 
-#Explore & Enjoy!!!!!!
+***Explore & Enjoy!!!!!***
