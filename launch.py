@@ -27,7 +27,7 @@ except ImportError:
   import os
   os.system("pip install requests")
   
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/db.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/visuals.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/numeric.py").text)
-exec(requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/window.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/db.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visuals.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/numeric.py").text)
+exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/window.py").text)
