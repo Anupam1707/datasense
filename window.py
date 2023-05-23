@@ -34,6 +34,9 @@ def home_window():
     def switchn():
         home.destroy()
         numeric_window()
+    def switche():
+        home.destroy()
+        export_window()
     def logout():
         with open("acc.tiak", "w"):
             pass
@@ -43,6 +46,7 @@ def home_window():
     Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
     Button(home, text = 'Visual Analysis', font = 'Arial 20 bold', bg='white', command=switchg).pack(pady=20)
     Button(home, text = 'Numeric Analysis', font = 'Arial 20 bold', bg='white', command=switchn).pack(pady=20)
+    Button(home, text = "Export Reports", font = "Arial 20 bold", bg = "white", command=switche).pack(pady=20)
     Button(home, text = "Help", font = "Arial 20 bold",bg = "white", command=switchn).pack(pady=20)
     Button(home, text = 'Exit', font = 'Arial 20 bold', bg='red', command=home.destroy).pack(side = RIGHT,anchor = "se")
     Button(home, text = 'Log Out', font = 'Arial 20 bold', bg='red', command=logout).pack(side = LEFT,anchor = "sw")
@@ -204,4 +208,22 @@ def graph_window():
     Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = RIGHT,anchor = "se")    
     Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = LEFT,anchor = "sw")    
     graph.mainloop()
+
+def export_window():
+    export  = Tk()
+    export.geometry("1280x720")
+    export.resizable(False, False)
+    export.config(bg = "black")
+    export.title("Data Export")
+    title = Label(export, text= 'Data Export', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
+
+    def num():
+        n.pack_forget()
+        v.pack_forget()
+        
+    n = Button(export, text = "Numeric Export", font = "Arial 20 bold", bg = "skyblue", command=num)
+    n.pack(pady = 10)
+    v = Button(export, text = "Visual Export", font = "Arial 20 bold", bg = "skyblue", command=graph_window)
+    v.pack(pady = 10)
+    
 login_window()
