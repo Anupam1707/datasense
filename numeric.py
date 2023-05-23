@@ -136,7 +136,7 @@ def numeric_window():
             b = Button(numeric, text="Back", font="Arial 20 bold", bg="skyblue", command=unpop)
             b.pack(pady=10)
             
-    response = requests.get("https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/numeric.jpg")
+    response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/numeric.jpg")
     img = Image.open(BytesIO(response.content))
     img = img.resize((1280,720), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
