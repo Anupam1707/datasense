@@ -233,6 +233,7 @@ def export_window():
     n.pack(pady = 10)
     v = Button(export, text = "Visual Export", font = "Arial 20 bold", bg = "skyblue", command=switchg)
     v.pack(pady = 10)
-    Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=export.destroy).pack(side = RIGHT,anchor = "se")    
-    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = LEFT,anchor = "sw")    
+    Button(export, text = 'Exit', font = 'Arial 20 bold', bg='red', command=export.destroy).pack(side = RIGHT,anchor = "se")    
+    Button(export, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = LEFT,anchor = "sw")
+    
 login_window()
