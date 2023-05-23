@@ -30,6 +30,6 @@ The expected outcomes may be one of the following:
 2. Numeric data corresponding to the analysis performed.
 3. Quick suggestions based on the analysis.
 
-Users can utilize this output to gain insights into the sales data of the food industry.
+Users can utilize this output to gain insights into the sales data of the industry.
 
 Overall, the Data Sense app provides a user-friendly interface for accessing and analyzing sales data stored in the Remote Database and offers a range of analytical tools for visualizing and interpreting the data.
