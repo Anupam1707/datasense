@@ -1,5 +1,3 @@
-Sure, here's the modified version:
-
 # Database Analyzer
 
 The purpose of this project is to develop a Python app, named Database Analyzer, that can analyze the sales data of the food industry stored in a Remote Database. The app provides both visual and numeric analysis of the data and offers a GUI interface for users to access and analyze the data directly from the Remote Database without any delays.
