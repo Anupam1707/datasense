@@ -217,13 +217,22 @@ def export_window():
     export.title("Data Export")
     title = Label(export, text= 'Data Export', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
 
+    def switch():
+        export.destroy()
+        home_window()
+
+    def switchg():
+        export.destroy()
+        graph_window()
+    
     def num():
         n.pack_forget()
         v.pack_forget()
         
     n = Button(export, text = "Numeric Export", font = "Arial 20 bold", bg = "skyblue", command=num)
     n.pack(pady = 10)
-    v = Button(export, text = "Visual Export", font = "Arial 20 bold", bg = "skyblue", command=graph_window)
+    v = Button(export, text = "Visual Export", font = "Arial 20 bold", bg = "skyblue", command=switchg)
     v.pack(pady = 10)
-    
+    Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=export.destroy).pack(side = RIGHT,anchor = "se")    
+    Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = LEFT,anchor = "sw")    
 login_window()
