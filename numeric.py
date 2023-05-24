@@ -5,8 +5,14 @@ from io import BytesIO
 
 def numeric_window():
     numeric = Tk()
+    
+    screen_width = numeric.winfo_screenwidth()
+    screen_height = numeric.winfo_screenheight()
+    x = (screen_width - desired_width) // 2
+    y = (screen_height - desired_height) // 2
+
     numeric.title("Numeric Analysis")
-    numeric.geometry("1280x720")
+    numeric.geometry(f"1280x720+{x}+{y}")
     numeric.overrideredirect(True)
 
     def quit():
