@@ -16,9 +16,15 @@ def pt():
 #Function to create a Home Page
 def home_window():
     home = Tk()
-    home.title("Home Page")
-    home.geometry("1280x720")
-    home.configure(bg = "black")
+    
+    screen_width = home.winfo_screenwidth()
+    screen_height = home.winfo_screenheight()
+    x = (screen_width - 1280) // 2
+    y = (screen_height - 720) // 2
+
+    home.title("Numeric Analysis")
+    home.geometry(f"1280x720+{x}+{y}")
+    home.overrideredirect(True)
 
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/home.jpg")
     img = Image.open(BytesIO(response.content))
@@ -27,6 +33,11 @@ def home_window():
     bk = Label(image=test)
     bk.image = test
     bk.place(x=0, y=0)
+    
+    def quit():
+        result = messagebox.askyesno("Confirmation", "Are you sure you want to quit?")
+        if result == True:
+            home.destroy()
     
     def switchg():
         home.destroy()
@@ -48,7 +59,7 @@ def home_window():
     Button(home, text = 'Numeric Analysis', font = 'Arial 20 bold', bg='white', command=switchn).pack(pady=20)
     Button(home, text = "Export Reports", font = "Arial 20 bold", bg = "white", command=switche).pack(pady=20)
     Button(home, text = "Help", font = "Arial 20 bold",bg = "white", command=switchn).pack(pady=20)
-    Button(home, text = 'Exit', font = 'Arial 20 bold', bg='red', command=home.destroy).pack(side = RIGHT,anchor = "se")
+    Button(home, text = 'Exit', font = 'Arial 20 bold', bg='red', command=quit).pack(side = RIGHT,anchor = "se")
     Button(home, text = 'Log Out', font = 'Arial 20 bold', bg='red', command=logout).pack(side = LEFT,anchor = "sw")
     
     home.mainloop()
