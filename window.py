@@ -187,8 +187,12 @@ def graph_window():
     def switch():
         graph.destroy()
         home_window()
-        
-
+    
+    def quit():
+        result = messagebox.askyesno("Confirmation", "Are you sure you want to quit?")
+        if result == True:
+            root.destroy()
+      
     l1v = StringVar()
     l1v.set("product")
     l2v = StringVar()
@@ -205,7 +209,7 @@ def graph_window():
     l4 = Label(graph, text="Type of Graph", font= "Arial 30", fg = "black").pack()
     l4inp = OptionMenu(graph, typ, *tps).pack(expand = True)
     Button(graph, text= "Plot", font = "Arial 20 bold", bg="skyblue", command=pt).pack()
-    Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=graph.destroy).pack(side = RIGHT,anchor = "se")    
+    Button(graph, text = 'Exit', font = 'Arial 20 bold', bg='red', command=quit).pack(side = RIGHT,anchor = "se")    
     Button(graph, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = LEFT,anchor = "sw")    
     graph.mainloop()
 
