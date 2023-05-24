@@ -175,6 +175,7 @@ def graph_window():
     graph.geometry("1280x720")
     graph.resizable(False,False)
     graph.config(bg="black")
+    graph.overrideredirect(True)
     
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visual.jpg")
     img = Image.open(BytesIO(response.content))
@@ -219,6 +220,7 @@ def export_window():
     export.resizable(False, False)
     export.config(bg = "black")
     export.title("Data Export")
+    export.overrideredirect(True)
     title = Label(export, text= 'Data Export', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
 
     def quit():
