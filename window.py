@@ -1,7 +1,7 @@
 """This is the backbone of the App. This program creates a link between the front end and the back-end."""
 
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, messagebox
 from PIL import Image, ImageTk, ImageDraw
 from io import BytesIO
 import SecuriPy
@@ -172,9 +172,14 @@ def graph_window():
     tps = ["horizontal bar graph", "vertical bar graph", "pie chart"]   
         
     graph = Tk()
-    graph.geometry("1280x720")
-    graph.resizable(False,False)
-    graph.config(bg="black")
+    
+    screen_width = graph.winfo_screenwidth()
+    screen_height = graph.winfo_screenheight()
+    x = (screen_width - 1280) // 2
+    y = (screen_height - 720) // 2
+
+    graph.title("Numeric Analysis")
+    graph.geometry(f"1280x720+{x}+{y}")
     graph.overrideredirect(True)
     
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visual.jpg")
