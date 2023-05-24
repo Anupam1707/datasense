@@ -191,7 +191,7 @@ def graph_window():
     def quit():
         result = messagebox.askyesno("Confirmation", "Are you sure you want to quit?")
         if result == True:
-            root.destroy()
+            graph.destroy()
       
     l1v = StringVar()
     l1v.set("product")
@@ -221,6 +221,11 @@ def export_window():
     export.title("Data Export")
     title = Label(export, text= 'Data Export', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
 
+    def quit():
+        result = messagebox.askyesno("Confirmation", "Are you sure you want to quit?")
+        if result == True:
+            export.destroy()
+    
     def switch():
         export.destroy()
         home_window()
@@ -260,7 +265,7 @@ def export_window():
     n.pack(pady = 10)
     v = Button(export, text = "Visual Export", font = "Arial 20 bold", bg = "skyblue", command=switchg)
     v.pack(pady = 10)
-    Button(export, text = 'Exit', font = 'Arial 20 bold', bg='red', command=export.destroy).pack(side = RIGHT,anchor = "se")    
+    Button(export, text = 'Exit', font = 'Arial 20 bold', bg='red', command=quit).pack(side = RIGHT,anchor = "se")    
     Button(export, text = 'Home', font = 'Arial 20 bold', bg='red', command=switch).pack(side = LEFT,anchor = "sw")
     
 login_window()
