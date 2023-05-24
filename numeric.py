@@ -8,6 +8,11 @@ def numeric_window():
     numeric.title("Numeric Analysis")
     numeric.geometry("1280x720")
 
+    def quit():
+        result = messagebox.askyesno("Confirmation", "Are you sure you want to quit?")
+        if result == True:
+            numeric.destroy()
+    
     def empty_home():
         tren.pack_forget()
         pop.pack_forget()
@@ -151,7 +156,7 @@ def numeric_window():
     pop.pack(pady = 10)
     most  = Button(numeric, text="Most Sold", font="Arial 20 bold", bg="skyblue", command=most_sold_win)
     most.pack(pady = 10)
-    Button(numeric, text='Exit', font='Arial 20 bold', bg='red', command=numeric.destroy).pack(side = RIGHT, anchor = "se")
+    Button(numeric, text='Exit', font='Arial 20 bold', bg='red', command=quit).pack(side = RIGHT, anchor = "se")
     Button(numeric, text='Home', font='Arial 20 bold', bg='red', command=switchh).pack(side = LEFT, anchor = "sw")
     
     numeric.mainloop()
