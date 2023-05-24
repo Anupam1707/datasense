@@ -8,8 +8,8 @@ def numeric_window():
     
     screen_width = numeric.winfo_screenwidth()
     screen_height = numeric.winfo_screenheight()
-    x = (screen_width - desired_width) // 2
-    y = (screen_height - desired_height) // 2
+    x = (screen_width - 1280) // 2
+    y = (screen_height - 720) // 2
 
     numeric.title("Numeric Analysis")
     numeric.geometry(f"1280x720+{x}+{y}")
