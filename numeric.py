@@ -7,6 +7,7 @@ def numeric_window():
     numeric = Tk()
     numeric.title("Numeric Analysis")
     numeric.geometry("1280x720")
+    numeric.overrideredirect(True)
 
     def quit():
         result = messagebox.askyesno("Confirmation", "Are you sure you want to quit?")
