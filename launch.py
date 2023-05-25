@@ -17,7 +17,7 @@ for module, code in modules:
     try:
         exec(module)
     except ImportError:
-        exec(code)
+        exec(os.system(code))
   
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/db.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visuals.py").text)
