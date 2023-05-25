@@ -1,7 +1,5 @@
 """This program is the Graphing Program of the App."""
 
-import numpy as np
-import matplotlib.pyplot as plt
 #Function to compile multiple data in to a single format for graphing and analysis
 def data(sheetname, colno=None, rowno=None, alldata=None, nums=False):
     if rowno == None and alldata == None and colno != None:
