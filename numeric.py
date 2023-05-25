@@ -1,9 +1,3 @@
-from tkinter import *
-from tkinter import messagebox
-import requests
-from PIL import Image, ImageTk
-from io import BytesIO
-
 def numeric_window():
     numeric = Tk()
     
