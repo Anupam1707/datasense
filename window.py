@@ -22,7 +22,7 @@ def home_window():
     x = (screen_width - 1280) // 2
     y = (screen_height - 720) // 2
 
-    home.title("Numeric Analysis")
+    home.title("Data Sense")
     home.geometry(f"1280x720+{x}+{y}")
     home.overrideredirect(True)
 
