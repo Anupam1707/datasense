@@ -232,11 +232,17 @@ def graph_window():
 
 def export_window():
     export  = Tk()
-    export.geometry("1280x720")
-    export.resizable(False, False)
-    export.config(bg = "black")
-    export.title("Data Export")
+    
+    screen_width = export.winfo_screenwidth()
+    screen_height = export.winfo_screenheight()
+    x = (screen_width - 1280) // 2
+    y = (screen_height - 720) // 2
+    
+    export.geometry(f"1280x720+{x}+{y}")
     export.overrideredirect(True)
+    export.title("Data Export")
+    
+    
     title = Label(export, text= 'Data Export', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
 
     def quit():
