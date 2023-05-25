@@ -1,11 +1,5 @@
 """This is the backbone of the App. This program creates a link between the front end and the back-end."""
 
-from tkinter import *
-from tkinter import ttk, messagebox
-from PIL import Image, ImageTk, ImageDraw
-from io import BytesIO
-import SecuriPy
-
 #Function to give values of the input to the graph plotter to plot the graph
 def pt():
     if l1v.get() != None and l2v.get() != None and typ.get() == "vertical bar graph":
