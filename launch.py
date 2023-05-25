@@ -10,7 +10,7 @@ modules = [
     ("import gspread", "pip install gspread"),
     ("from oauth2client.service_account import ServiceAccountCredentials", "pip install oath2client"),
     ("import SecuriPy", "pip install SecuriPy"),
-    ("from fetchify import sense", "pip install fetchify")
+    ("from fetchify import sense, image", "pip install fetchify")
 ]
 
 for module, code in modules:
