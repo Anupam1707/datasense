@@ -30,7 +30,7 @@ import SecuriPy
 import requests
 import matplotlib.pyplot as plt
 import numpy
-from fetchify import sense
+from fetchify import sense, image
 
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/db.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visuals.py").text)
