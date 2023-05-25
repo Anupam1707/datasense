@@ -5,6 +5,7 @@ from tkinter import ttk, messagebox
 from PIL import Image, ImageTk, ImageDraw
 from io import BytesIO
 import SecuriPy
+import requests
 
 #Function to give values of the input to the graph plotter to plot the graph
 def pt():
@@ -19,20 +20,20 @@ def home_window():
     
     screen_width = home.winfo_screenwidth()
     screen_height = home.winfo_screenheight()
-    x = (screen_width - 1280) // 2
-    y = (screen_height - 720) // 2
+##    x = (screen_width - 1280) // 2
+##    y = (screen_height - 720) // 2
 
     home.title("Data Sense")
-    home.geometry(f"1280x720+{x}+{y}")
+    home.attributes("-fullscreen",True)
     home.overrideredirect(True)
 
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/home.jpg")
     img = Image.open(BytesIO(response.content))
-    img = img.resize((1280,720), Image.LANCZOS)
+    img = img.resize((screen_width,screen_height), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
     bk = Label(image=test)
     bk.image = test
-    bk.place(x=0, y=0)
+    bk.place(x = -2, y = -2)
     
     def quit():
         result = messagebox.askyesno("Confirmation", "Are you sure you want to quit?")
@@ -54,7 +55,7 @@ def home_window():
         home.destroy()
         login_window()
         
-    Label(home, text = "Food Sales Management", font = "Arial 40 bold", bg = "black", fg = "white").pack()
+    Label(home, text = "Welcome to Data Sense", font = "Arial 40 bold", bg = "black", fg = "white").pack()
     Button(home, text = 'Visual Analysis', font = 'Arial 20 bold', bg='white', command=switchg).pack(pady=20)
     Button(home, text = 'Numeric Analysis', font = 'Arial 20 bold', bg='white', command=switchn).pack(pady=20)
     Button(home, text = "Export Reports", font = "Arial 20 bold", bg = "white", command=switche).pack(pady=20)
@@ -186,20 +187,20 @@ def graph_window():
     
     screen_width = graph.winfo_screenwidth()
     screen_height = graph.winfo_screenheight()
-    x = (screen_width - 1280) // 2
-    y = (screen_height - 720) // 2
+##    x = (screen_width - 1280) // 2
+##    y = (screen_height - 720) // 2
 
     graph.title("Numeric Analysis")
-    graph.geometry(f"1280x720+{x}+{y}")
+    graph.attributes("-fullscreen",True)
     graph.overrideredirect(True)
     
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visual.jpg")
     img = Image.open(BytesIO(response.content))
-    img = img.resize((1280,720), Image.LANCZOS)
+    img = img.resize((screen_width,screen_height), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
     bk = Label(image=test)
     bk.image = test
-    bk.place(x=0, y=0)
+    bk.place(x=-2, y=-2)
     
     def switch():
         graph.destroy()
@@ -235,10 +236,10 @@ def export_window():
     
     screen_width = export.winfo_screenwidth()
     screen_height = export.winfo_screenheight()
-    x = (screen_width - 1280) // 2
-    y = (screen_height - 720) // 2
-    
-    export.geometry(f"1280x720+{x}+{y}")
+##    x = (screen_width - 1280) // 2
+##    y = (screen_height - 720) // 2
+##    
+    export.attributes("fullscreen",True)
     export.overrideredirect(True)
     export.title("Data Export")
     
