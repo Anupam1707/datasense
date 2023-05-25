@@ -232,7 +232,7 @@ def export_window():
 ##    x = (screen_width - 1280) // 2
 ##    y = (screen_height - 720) // 2
 ##    
-    export.attributes("fullscreen",True)
+    export.attributes("-fullscreen",True)
     export.overrideredirect(True)
     export.title("Data Export")
     
