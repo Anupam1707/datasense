@@ -18,7 +18,19 @@ for module, code in modules:
         exec(module)
     except ImportError:
         exec(os.system(code))
-  
+ 
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import SecuriPy
+from tkinter import *
+from tkinter import ttk, messagebox
+from PIL import Image, ImageTk, ImageDraw
+from io import BytesIO
+import SecuriPy
+import requests
+import matplotlib.pyplot as plt
+import numpy
+
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/db.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visuals.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/numeric.py").text)
