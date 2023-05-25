@@ -42,7 +42,7 @@ def home_window():
         home.destroy()
         export_window()
     def logout():
-        with open("acc.tiak", "w"):
+        with open("C:\acc.tiak", "w"):
             pass
         home.destroy()
         login_window()
@@ -61,10 +61,10 @@ def home_window():
 def signup_window():
     usr = len(rows)+2
     try:
-        with open("acc.tiak", "r", encoding = "utf-8") as a:
+        with open("C:\acc.tiak", "r", encoding = "utf-8") as a:
             d = a.readlines()
     except FileNotFoundError:
-        with open("acc.tiak","w") as w:
+        with open("C:\acc.tiak","w") as w:
             pass
     
     signup = Tk()
@@ -92,7 +92,7 @@ def signup_window():
         worksheet.update_cell(usr,3,"IN")
         worksheet.update_cell(usr,4,"Researcher")
         usr = SecuriPy.encrypt(username_entry.get(), "mealmetrics")
-        with open("acc.tiak","w", encoding = "utf-8") as w:
+        with open("C:\acc.tiak","w", encoding = "utf-8") as w:
                 w.write(f"{usr}")
                
         signup.destroy()
@@ -108,7 +108,7 @@ def login_window():
     lg = None
     usr = ""
     try:
-        with open("acc.tiak", "r", encoding = "utf-8") as a:
+        with open("C:\acc.tiak", "r", encoding = "utf-8") as a:
             d = a.readlines()
             if d:
                 d[0] = d[0].split()
@@ -116,7 +116,7 @@ def login_window():
                 usr = SecuriPy.decrypt(f"{d[0][0]}")
                 
     except FileNotFoundError:
-        with open("acc.tiak","w") as w:
+        with open("C:\acc.tiak","w") as w:
             pass
     def switch():
         login.destroy()
@@ -153,7 +153,7 @@ def login_window():
             welcome = Label(login, text=f"Welcome back {username_entry.get()}", font="Arial 30", fg = "blue").pack()
             login.destroy() 
             home_window()
-            with open("acc.tiak","w", encoding = "utf-8") as w:
+            with open("C:\acc.tiak","w", encoding = "utf-8") as w:
                 user = SecuriPy.encrypt(user, 'mealmetrics')
                 w.write(user)
         else:
