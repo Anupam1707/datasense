@@ -20,8 +20,7 @@ def home_window():
     home.attributes("-fullscreen",True)
     home.overrideredirect(True)
 
-    response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/home.jpg")
-    img = Image.open(BytesIO(response.content))
+    img = Image.open(BytesIO(image("home.jpg", "ds"))
     img = img.resize((screen_width,screen_height), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
     bk = Label(image=test)
