@@ -1,16 +1,4 @@
 """This program helps to create a link between the Google Sheets Database and the App"""
-#Import Required Libraries    
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import SecuriPy
-from tkinter import *
-from tkinter import ttk, messagebox
-from PIL import Image, ImageTk, ImageDraw
-from io import BytesIO
-import SecuriPy
-import requests
-import matplotlib.pyplot as plt
-import numpy
 
 scope = ['https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive']
