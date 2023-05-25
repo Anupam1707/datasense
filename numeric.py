@@ -7,7 +7,7 @@ def numeric_window():
     #y = (screen_height - 720) // 2
 
     numeric.title("Numeric Analysis")
-    numeric.attributes(-fullscreen",True)
+    numeric.attributes("-fullscreen",True)
     numeric.overrideredirect(True)
 
     def quit():
