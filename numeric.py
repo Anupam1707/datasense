@@ -3,11 +3,11 @@ def numeric_window():
     
     screen_width = numeric.winfo_screenwidth()
     screen_height = numeric.winfo_screenheight()
-    x = (screen_width - 1280) // 2
-    y = (screen_height - 720) // 2
+    #x = (screen_width - 1280) // 2
+    #y = (screen_height - 720) // 2
 
     numeric.title("Numeric Analysis")
-    numeric.geometry(f"1280x720+{x}+{y}")
+    numeric.attributes(-fullscreen",True)
     numeric.overrideredirect(True)
 
     def quit():
@@ -145,11 +145,11 @@ def numeric_window():
             
     response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/numeric.jpg")
     img = Image.open(BytesIO(response.content))
-    img = img.resize((1280,720), Image.LANCZOS)
+    img = img.resize((screen_width,screen_height), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
     bk = Label(image=test)
     bk.image = test
-    bk.place(x=0, y=0)
+    bk.place(x=-2, y=-2)
 
     Label(numeric, text='Numeric Analysis', font='Arial 35 bold', bg='#7676EE').pack(pady = 20)
     tren = Button(numeric, text="Trending", font="Arial 20 bold", bg="skyblue", command=trend_win)
