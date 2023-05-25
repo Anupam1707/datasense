@@ -75,7 +75,7 @@ def signup_window():
         signup.destroy()
         login_window()
     
-    title = Label(signup, text="Food Database SignUP", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
+    title = Label(signup, text="Data Sense SignU", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
     username_label = Label(signup, text="Username", font = "Arial 35 bold")
     username_label.pack(anchor="center")
     username_entry = Entry(signup, font = "Arial 30 bold")
@@ -130,7 +130,7 @@ def login_window():
     login.title("Login")
     login.attributes('-fullscreen', True)
 
-    title = Label(login, text="Food Database Login", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
+    title = Label(login, text="Data Sense Login", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
     username_label = Label(login, text="Username", font = "Arial 35 bold")
     username_label.pack(anchor="center")
     username_entry = Entry(login, font = "Arial 30 bold")
@@ -164,7 +164,7 @@ def login_window():
     Button(login, text = 'Exit', font = 'Arial 20 bold', bg='red', command=login.destroy).pack(side = BOTTOM,anchor = "se")
     if lg == True:
         con = Button(login, text= f"Continue as {usr}", font = "Arial 20 bold", bg="skyblue", command=switch).pack(pady = 30)
-    sign = Button(login, text= "Sign UP Instead", font = "Arial 20 bold", bg="skyblue", command=switchs).pack(pady = 30)
+    sign = Button(login, text= "Sign Up Instead", font = "Arial 20 bold", bg="skyblue", command=switchs).pack(pady = 30)
     login.mainloop()
     
 #Function to create a Visual Analysis Page
