@@ -1,4 +1,4 @@
-from fetchify import *
+from fetchify import sense
 files = ["db.py","visuals.py", "numeric.py", "window.py"]
 
 with open("main.py","w") as f:
