@@ -5,7 +5,6 @@ from tkinter import ttk, messagebox
 from PIL import Image, ImageTk, ImageDraw
 from io import BytesIO
 import SecuriPy
-import requests
 
 #Function to give values of the input to the graph plotter to plot the graph
 def pt():
