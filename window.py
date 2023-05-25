@@ -186,8 +186,7 @@ def graph_window():
     graph.attributes("-fullscreen",True)
     graph.overrideredirect(True)
     
-    response = requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visual.jpg")
-    img = Image.open(BytesIO(response.content))
+    img = Image.open(BytesIO(image("visual.jpg", "ds")))
     img = img.resize((screen_width,screen_height), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
     bk = Label(image=test)
@@ -235,9 +234,15 @@ def export_window():
     export.overrideredirect(True)
     export.title("Data Export")
     
+    img = Image.open(BytesIO(image("export.jpg", "ds")))
+    img = img.resize((screen_width,screen_height), Image.LANCZOS)
+    test = ImageTk.PhotoImage(img)
+    bk = Label(image=test)
+    bk.image = test
+    bk.place(x=-2, y=-2)
     
     title = Label(export, text= 'Data Export', font= 'Arial 35 bold',bg='#7676EE').pack(pady = 10)
-
+    
     def quit():
         result = messagebox.askyesno("Confirmation", "Are you sure you want to quit?")
         if result == True:
