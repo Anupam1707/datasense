@@ -42,7 +42,7 @@ def home_window():
         home.destroy()
         export_window()
     def logout():
-        with open("C:\acc.tiak", "w"):
+        with open("acc.tiak", "w"):
             pass
         home.destroy()
         login_window()
@@ -61,10 +61,10 @@ def home_window():
 def signup_window():
     usr = len(rows)+2
     try:
-        with open("C:\acc.tiak", "r", encoding = "utf-8") as a:
+        with open("acc.tiak", "r", encoding = "utf-8") as a:
             d = a.readlines()
     except FileNotFoundError:
-        with open("C:\acc.tiak","w") as w:
+        with open("acc.tiak","w") as w:
             pass
     
     signup = Tk()
@@ -75,7 +75,7 @@ def signup_window():
         signup.destroy()
         login_window()
     
-    title = Label(signup, text="Data Sense SignU", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
+    title = Label(signup, text="Food Database SignUP", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
     username_label = Label(signup, text="Username", font = "Arial 35 bold")
     username_label.pack(anchor="center")
     username_entry = Entry(signup, font = "Arial 30 bold")
@@ -92,7 +92,7 @@ def signup_window():
         worksheet.update_cell(usr,3,"IN")
         worksheet.update_cell(usr,4,"Researcher")
         usr = SecuriPy.encrypt(username_entry.get(), "mealmetrics")
-        with open("C:\acc.tiak","w", encoding = "utf-8") as w:
+        with open("acc.tiak","w", encoding = "utf-8") as w:
                 w.write(f"{usr}")
                
         signup.destroy()
@@ -108,7 +108,7 @@ def login_window():
     lg = None
     usr = ""
     try:
-        with open("C:\acc.tiak", "r", encoding = "utf-8") as a:
+        with open("acc.tiak", "r", encoding = "utf-8") as a:
             d = a.readlines()
             if d:
                 d[0] = d[0].split()
@@ -116,7 +116,7 @@ def login_window():
                 usr = SecuriPy.decrypt(f"{d[0][0]}")
                 
     except FileNotFoundError:
-        with open("C:\acc.tiak","w") as w:
+        with open("acc.tiak","w") as w:
             pass
     def switch():
         login.destroy()
@@ -130,7 +130,7 @@ def login_window():
     login.title("Login")
     login.attributes('-fullscreen', True)
 
-    title = Label(login, text="Data Sense Login", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
+    title = Label(login, text="Food Database Login", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
     username_label = Label(login, text="Username", font = "Arial 35 bold")
     username_label.pack(anchor="center")
     username_entry = Entry(login, font = "Arial 30 bold")
@@ -153,7 +153,7 @@ def login_window():
             welcome = Label(login, text=f"Welcome back {username_entry.get()}", font="Arial 30", fg = "blue").pack()
             login.destroy() 
             home_window()
-            with open("C:\acc.tiak","w", encoding = "utf-8") as w:
+            with open("acc.tiak","w", encoding = "utf-8") as w:
                 user = SecuriPy.encrypt(user, 'mealmetrics')
                 w.write(user)
         else:
@@ -164,7 +164,7 @@ def login_window():
     Button(login, text = 'Exit', font = 'Arial 20 bold', bg='red', command=login.destroy).pack(side = BOTTOM,anchor = "se")
     if lg == True:
         con = Button(login, text= f"Continue as {usr}", font = "Arial 20 bold", bg="skyblue", command=switch).pack(pady = 30)
-    sign = Button(login, text= "Sign Up Instead", font = "Arial 20 bold", bg="skyblue", command=switchs).pack(pady = 30)
+    sign = Button(login, text= "Sign UP Instead", font = "Arial 20 bold", bg="skyblue", command=switchs).pack(pady = 30)
     login.mainloop()
     
 #Function to create a Visual Analysis Page
