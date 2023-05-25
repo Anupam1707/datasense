@@ -9,6 +9,8 @@ from PIL import Image, ImageTk, ImageDraw
 from io import BytesIO
 import SecuriPy
 import requests
+import matplotlib.pyplot as plt
+import numpy
 
 scope = ['https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive']
