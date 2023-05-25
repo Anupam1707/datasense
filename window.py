@@ -20,7 +20,7 @@ def home_window():
     home.attributes("-fullscreen",True)
     home.overrideredirect(True)
 
-    img = Image.open(BytesIO(image("home.jpg", "ds"))
+    img = Image.open(BytesIO(image("home.jpg", "ds")))
     img = img.resize((screen_width,screen_height), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
     bk = Label(image=test)
