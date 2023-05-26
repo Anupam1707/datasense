@@ -186,7 +186,7 @@ def graph_window():
     graph.attributes("-fullscreen",True)
     graph.overrideredirect(True)
     
-    img = Image.open(BytesIO(image("visual.jpg", "ds", image = True)))
+    img = Image.open(BytesIO(fetch("visual.jpg", "ds", image = True)))
     img = img.resize((screen_width,screen_height), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
     bk = Label(image=test)
