@@ -111,9 +111,8 @@ def login_window():
         with open("acc.tiak", "r", encoding = "utf-8") as a:
             d = a.readlines()
             if d:
-                d[0] = d[0].split()
                 lg = True
-                usr = SecuriPy.Text.decrypt(f"{d[0][0]}", "datasense")
+                usr = SecuriPy.Text.decrypt(f"{d[0]}", "datasense")
                 
     except FileNotFoundError:
         with open("acc.tiak","w") as w:
