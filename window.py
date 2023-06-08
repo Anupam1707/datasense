@@ -129,7 +129,7 @@ def login_window():
     login.title("Login")
     login.attributes('-fullscreen', True)
 
-    title = Label(login, text="Food Database Login", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
+    title = Label(login, text="Data Sense Login", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
     username_label = Label(login, text="Username", font = "Arial 35 bold")
     username_label.pack(anchor="center")
     username_entry = Entry(login, font = "Arial 30 bold")
