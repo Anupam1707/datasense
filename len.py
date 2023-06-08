@@ -1,7 +1,7 @@
 import requests
 import os
 
-url = "https://raw.githubusercontent.com/Anupam1707/food-sales-analysis/main/"
+url = "https://raw.githubusercontent.com/Anupam1707/datasense/main/"
 
 urls = ["db.py",
         "visuals.py",
