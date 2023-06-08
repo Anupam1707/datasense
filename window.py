@@ -75,7 +75,7 @@ def signup_window():
         signup.destroy()
         login_window()
     
-    title = Label(signup, text="Food Database SignUP", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
+    title = Label(signup, text="Data Sense Signup", font = "Arial 40 bold",bg = "black", fg = "white").pack(pady = 50)
     username_label = Label(signup, text="Username", font = "Arial 35 bold")
     username_label.pack(anchor="center")
     username_entry = Entry(signup, font = "Arial 30 bold")
