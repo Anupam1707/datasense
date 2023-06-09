@@ -1,4 +1,10 @@
 """This is the backbone of the App. This program creates a link between the front end and the back-end."""
+import SecuriPy
+from tkinter import *
+from tkinter import messagebox
+from PIL import Image, ImageTk
+from io import BytesIO
+from fetchify import fetch
 
 #Function to give values of the input to the graph plotter to plot the graph
 def pt():
@@ -233,7 +239,7 @@ def export_window():
     export.overrideredirect(True)
     export.title("Data Export")
     
-    img = Image.open(BytesIO(image("export.jpg", "ds", image = True)))
+    img = Image.open(BytesIO(fetch("export.jpg", "ds", image = True)))
     img = img.resize((screen_width,screen_height), Image.LANCZOS)
     test = ImageTk.PhotoImage(img)
     bk = Label(image=test)
@@ -267,20 +273,20 @@ def export_window():
             export.destroy()
             export_window()
         
-        rsl = Label(export, text = "Starting Row", font = "Arial 20 blod", bg = "skyblue")
+        rsl = Label(export, text = "Starting Row", font = "Arial 20 bold", bg = "skyblue")
         rsl.pack(pady = 10)
         rs = Entry(export, font  = "Arial 20 bold")
         rs.pack(pady = 10)
-        rel = Label(export, text = "Ending Row", font = "Arial 20 blod", bg = "skyblue")
+        rel = Label(export, text = "Ending Row", font = "Arial 20 bold", bg = "skyblue")
         rel.pack(pady = 10)
         re = Entry(export, font  = "Arial 20 bold")
         re.pack(pady = 10)
         
-        csl = Label(export, text = "Starting Column", font = "Arial 20 blod", bg = "skyblue")
+        csl = Label(export, text = "Starting Column", font = "Arial 20 bold", bg = "skyblue")
         csl.pack(pady = 10)
         cs = Entry(export, font  = "Arial 20 bold")
         cs.pack(pady = 10)
-        cel = Label(export, text = "Ending Column", font = "Arial 20 blod", bg = "skyblue")
+        cel = Label(export, text = "Ending Column", font = "Arial 20 bold", bg = "skyblue")
         cel.pack(pady = 10)
         ce = Entry(export, font  = "Arial 20 bold")
         ce.pack(pady = 10)
