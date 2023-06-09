@@ -254,6 +254,10 @@ def export_window():
     def switchg():
         export.destroy()
         graph_window()
+        
+    def returnn():
+        n.pack(pady = 10)
+        v.pack(pady = 10)
     
     def num():
         n.pack_forget()
@@ -262,25 +266,25 @@ def export_window():
         def switchh():
             export.destroy()
             export_window()
-
-        def row():
-            r.pack_forget()
-            c.pack_forget()
-    
-            back =  Button(export, text = "Back", font = "Arial 20 bold", bg = "skyblue", command=switchh)
-            back.pack(pady =10)
-            
-        def column():
-            r.pack_forget()
-            c.pack_forget()
-
-            back =  Button(export, text = "Back", font = "Arial 20 bold", bg = "skyblue", command=switchh)
-            back.pack(pady = 10)
-
-        r = Button(export, text = "Export Rows", font = "Arial 20 bold", bg = "skyblue", command=row)
-        r.pack(pady = 10)
-        c = Button(export, text = "Export Columns", font = "Arial 20 bold", bg = "skyblue", command=column)
-        c.pack(pady = 10)
+        
+        rsl = Label(export, text = "Starting Row", font = "Arial 20 blod", bg = "skyblue")
+        rsl.pack(pady = 10)
+        rs = Entry(export, font  = "Arial 20 bold")
+        rs.pack(pady = 10)
+        rel = Label(export, text = "Ending Row", font = "Arial 20 blod", bg = "skyblue")
+        rel.pack(pady = 10)
+        re = Entry(export, font  = "Arial 20 bold")
+        re.pack(pady = 10)
+        
+        csl = Label(export, text = "Starting Column", font = "Arial 20 blod", bg = "skyblue")
+        csl.pack(pady = 10)
+        cs = Entry(export, font  = "Arial 20 bold")
+        cs.pack(pady = 10)
+        cel = Label(export, text = "Ending Column", font = "Arial 20 blod", bg = "skyblue")
+        cel.pack(pady = 10)
+        ce = Entry(export, font  = "Arial 20 bold")
+        ce.pack(pady = 10)
+        
         
     n = Button(export, text = "Numeric Export", font = "Arial 20 bold", bg = "skyblue", command=num)
     n.pack(pady = 10)
