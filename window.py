@@ -272,6 +272,13 @@ def export_window():
         def switchh():
             export.destroy()
             export_window()
+            
+        def concsv(rows, rowe, cols, cole):
+           dt = data(sales, alldata = True)
+           selected_rows = dt[rows-1:rowe]
+           selected_columns = [row[cols-1:cole+1] for row in selected_rows]
+           df = pd.DataFrame(selected_columns)
+           df.to_csv("NumericAnalysis_Row{rows}Column{cole}.csv", index=False)
         
         rsl = Label(export, text = "Starting Row", font = "Arial 20 bold", bg = "skyblue")
         rsl.pack(pady = 10)
