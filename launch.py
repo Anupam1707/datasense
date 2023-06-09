@@ -10,7 +10,8 @@ modules = [
     ("import gspread", "pip install gspread"),
     ("from oauth2client.service_account import ServiceAccountCredentials", "pip install oath2client"),
     ("import SecuriPy", "pip install SecuriPy"),
-    ("from fetchify import fetch", "pip install fetchify")
+    ("from fetchify import fetch", "pip install fetchify"),
+    ("import pandas as pd","pip install pandas")
 ]
 
 for module, code in modules:
@@ -31,6 +32,7 @@ import requests
 import matplotlib.pyplot as plt
 import numpy
 from fetchify import fetch
+import pandas as pd
 
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/db.py").text)
 exec(requests.get("https://raw.githubusercontent.com/Anupam1707/datasense/main/visuals.py").text)
