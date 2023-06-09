@@ -286,7 +286,7 @@ def export_window():
            selected_columns = [row[cols-1:cole+1] for row in selected_rows]
            df = pd.DataFrame(selected_columns)
            df.to_excel("NumericAnalysis_Row{rows}Column{cole}.xlsx", index=False)
-        
+
         rsl = Label(export, text = "Starting Row", font = "Arial 20 bold", bg = "skyblue")
         rsl.pack(pady = 10)
         rs = Entry(export, font  = "Arial 20 bold")
