@@ -305,6 +305,10 @@ def export_window():
         ce = Entry(export, font  = "Arial 20 bold")
         ce.pack(pady = 10)
         
+        csvexp = Button(export, text = "Export as CSV", font = "Arial 20 bold", bg = "skyblue", command = concsv(rs.get(), re.get(), cs.get(), ce.get()))
+        csvexp.pack(pady = 10)
+        excelexp = Button(export, text = "Arial 20 bold", font = "Arial 20 bold", bg = "skyblue", command = conexcel(rs.get(), re.get(), cs.get(), ce.get()))
+        excelexp.pacl(pady = 10)
         
     n = Button(export, text = "Numeric Export", font = "Arial 20 bold", bg = "skyblue", command=num)
     n.pack(pady = 10)
