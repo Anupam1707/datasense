@@ -229,10 +229,10 @@ def graph_window():
 
 def export_window():
     export  = Tk()
-    rows = 0
-    rowe = 0
-    cols = 0
-    cole = 0
+    rows = IntVar()
+    rowe = IntVar()
+    cols = IntVar()
+    cole = IntVar()
     screen_width = export.winfo_screenwidth()
     screen_height = export.winfo_screenheight()
 ##    x = (screen_width - 1280) // 2
@@ -276,49 +276,41 @@ def export_window():
             export.destroy()
             export_window()
             
-        def concsv(rows, rowe, cols, cole):
-           rows = int(rows)
-           rowe = int(rowe)
-           cols = int(cols)
-           cole = int(cole)
+        def concsv():
            dt = data(sales, alldata = True)
-           selected_rows = dt[rows1:rowe]
-           selected_columns = [row[cols-1:cole+1] for row in selected_rows]
+           selected_rows = dt[(rows.get()-1):rowe.get()]
+           selected_columns = [row[(cols.get()-1):(cole.get()+1)] for row in selected_rows]
            df = pd.DataFrame(selected_columns)
            df.to_csv("NumericAnalysis_Row{rows}Column{cole}.csv", index=False)
        
-        def conexcel(rows, rowe, cols, cole):
-           rows = int(rows)
-           rowe = int(rowe)
-           cols = int(cols)
-           cole = int(cole)
+        def conexcel():
            dt = data(sales, alldata = True)
-           selected_rows = dt[rows-1:rowe]
-           selected_columns = [row[cols-1:cole+1] for row in selected_rows]
+           selected_rows = dt[(rows.get()-1):rowe.get()]
+           selected_columns = [row[(cols.get()-1):(cole.get()+1)] for row in selected_rows]
            df = pd.DataFrame(selected_columns)
            df.to_excel("NumericAnalysis_Row{rows}Column{cole}.xlsx", index=False)
 
         rsl = Label(export, text = "Starting Row", font = "Arial 20 bold", bg = "skyblue")
         rsl.pack(pady = 10)
-        rs = Entry(export, font  = "Arial 20 bold")
+        rs = Entry(export, textvariable = rows, font  = "Arial 20 bold")
         rs.pack(pady = 10)
         rel = Label(export, text = "Ending Row", font = "Arial 20 bold", bg = "skyblue")
         rel.pack(pady = 10)
-        re = Entry(export, font  = "Arial 20 bold")
+        re = Entry(export, textvariable = rowe, font  = "Arial 20 bold")
         re.pack(pady = 10)
         
         csl = Label(export, text = "Starting Column", font = "Arial 20 bold", bg = "skyblue")
         csl.pack(pady = 10)
-        cs = Entry(export, font  = "Arial 20 bold")
+        cs = Entry(export, textvariable = cols, font  = "Arial 20 bold")
         cs.pack(pady = 10)
         cel = Label(export, text = "Ending Column", font = "Arial 20 bold", bg = "skyblue")
         cel.pack(pady = 10)
-        ce = Entry(export, font  = "Arial 20 bold")
+        ce = Entry(export, textvariable = cole, font  = "Arial 20 bold")
         ce.pack(pady = 10)
         
         csvexp = Button(export, text = "Export as CSV", font = "Arial 20 bold", bg = "skyblue", command = concsv(rs.get(), re.get(), cs.get(), ce.get()))
         csvexp.pack(pady = 10)
-        excelexp = Button(export, text = "Arial 20 bold", font = "Arial 20 bold", bg = "skyblue", command = conexcel(rs.get(), re.get(), cs.get(), ce.get()))
+        excelexp = Button(export, text = "Export as Spreadsheet", font = "Arial 20 bold", bg = "skyblue", command = conexcel(rs.get(), re.get(), cs.get(), ce.get()))
         excelexp.pacl(pady = 10)
         
     n = Button(export, text = "Numeric Export", font = "Arial 20 bold", bg = "skyblue", command=num)
