@@ -311,7 +311,7 @@ def export_window():
         csvexp = Button(export, text = "Export as CSV", font = "Arial 20 bold", bg = "skyblue", command = concsv())
         csvexp.pack(pady = 10)
         excelexp = Button(export, text = "Export as Spreadsheet", font = "Arial 20 bold", bg = "skyblue", command = conexcel())
-        excelexp.pacl(pady = 10)
+        excelexp.pack(pady = 10)
         
     n = Button(export, text = "Numeric Export", font = "Arial 20 bold", bg = "skyblue", command=num)
     n.pack(pady = 10)
