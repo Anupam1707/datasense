@@ -274,13 +274,21 @@ def export_window():
             export_window()
             
         def concsv(rows, rowe, cols, cole):
+           rows = int(rows)
+           rowe = int(rowe)
+           cols = int(cols)
+           cole = int(cole)
            dt = data(sales, alldata = True)
-           selected_rows = dt[rows-1:rowe]
+           selected_rows = dt[rows1:rowe]
            selected_columns = [row[cols-1:cole+1] for row in selected_rows]
            df = pd.DataFrame(selected_columns)
            df.to_csv("NumericAnalysis_Row{rows}Column{cole}.csv", index=False)
        
         def conexcel(rows, rowe, cols, cole):
+           rows = int(rows)
+           rowe = int(rowe)
+           cols = int(cols)
+           cole = int(cole)
            dt = data(sales, alldata = True)
            selected_rows = dt[rows-1:rowe]
            selected_columns = [row[cols-1:cole+1] for row in selected_rows]
