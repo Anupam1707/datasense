@@ -308,9 +308,9 @@ def export_window():
         ce = Entry(export, textvariable = cole, font  = "Arial 20 bold")
         ce.pack(pady = 10)
         
-        csvexp = Button(export, text = "Export as CSV", font = "Arial 20 bold", bg = "skyblue", command = concsv(rs.get(), re.get(), cs.get(), ce.get()))
+        csvexp = Button(export, text = "Export as CSV", font = "Arial 20 bold", bg = "skyblue", command = concsv())
         csvexp.pack(pady = 10)
-        excelexp = Button(export, text = "Export as Spreadsheet", font = "Arial 20 bold", bg = "skyblue", command = conexcel(rs.get(), re.get(), cs.get(), ce.get()))
+        excelexp = Button(export, text = "Export as Spreadsheet", font = "Arial 20 bold", bg = "skyblue", command = conexcel())
         excelexp.pacl(pady = 10)
         
     n = Button(export, text = "Numeric Export", font = "Arial 20 bold", bg = "skyblue", command=num)
