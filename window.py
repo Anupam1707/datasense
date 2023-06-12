@@ -229,7 +229,10 @@ def graph_window():
 
 def export_window():
     export  = Tk()
-    
+    rows = 0
+    rowe = 0
+    cols = 0
+    cole = 0
     screen_width = export.winfo_screenwidth()
     screen_height = export.winfo_screenheight()
 ##    x = (screen_width - 1280) // 2
