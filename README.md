@@ -15,16 +15,22 @@ The app utilizes the following libraries and APIs:
 - ***SecuriPy***, a library developed by the app's developer, for security-related functionalities.
 
 ## Features Offered
-
-1. **GUI interface** for accessing and analyzing sales data: Users can access the sales data directly from the Remote Database through a GUI interface and choose between visual or numeric analysis of the data.
+1. **Accountability** for safe and secure access to big data. The app offers a safe and secure account management system with encrypted credential storage to security
+Here is a preview of te login page of the app.
+![Login](https://raw.githubusercontent.com/Anupam1707/datasense/main/images/login.jpg)
+Here is a preview of the signup page of the app.
+![Login](https://raw.githubusercontent.com/Anupam1707/datasense/main/images/signup.jpg)
+2. **GUI interface** for accessing and analyzing sales data: Users can access the sales data directly from the Remote Database through a GUI interface and choose between visual or numeric analysis of the data.
 ![homepage](https://raw.githubusercontent.com/Anupam1707/datasense/main/images/homepage.jpg)
 3. **Visual analysis** of sales data: The app uses **Matplotlib** to create graphs and visualizations of the sales data, such as bar charts, histograms, etc., according to the parameters selected by the user.
-4. **Numeric analysis** of sales data: The app uses **NumPy** to perform numerical analysis of the sales data, such as calculating the mean, median, mode, or standard deviation of the data.
-5. **AI-Based** Suggestions of Analysis: The app is integrated with AI to provide suggestions based on the analysis of the sales data to enhance production and sales.
-6. **Data export**: The app allows users to export the analyzed data in various formats, such as:
+![Login](https://raw.githubusercontent.com/Anupam1707/datasense/main/images/visualanalysis.jpg)
+5. **Numeric analysis** of sales data: The app uses **NumPy** to perform numerical analysis of the sales data, such as calculating the mean, median, mode, or standard deviation of the data.
+![Login](https://raw.githubusercontent.com/Anupam1707/datasense/main/images/numericanalysis.jpg)
+6. **AI-Based** Suggestions of Analysis: The app is integrated with AI to provide suggestions based on the analysis of the sales data to enhance production and sales.
+7. **Data export**: The app allows users to export the analyzed data in various formats, such as:
    - Graphs: **JPEG, PNG.**
    - Selected Data: **CSV, ANY SPREADSHEET.**
-
+![Login](https://raw.githubusercontent.com/Anupam1707/datasense/main/images/dataexport.jpg)
 The expected outcomes may be one of the following:
 
 1. A graph plotted based on the selected parameters.
