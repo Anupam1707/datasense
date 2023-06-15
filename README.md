@@ -28,7 +28,6 @@ Here is a preview of the signup page of the app.
 4. **Numeric analysis** of sales data: The app uses **NumPy** to perform numerical analysis of the sales data, such as calculating the mean, median, mode, or standard deviation of the data.
 ![Login](https://raw.githubusercontent.com/Anupam1707/datasense/main/images/numericanalysis.jpg)
 5. **AI-Based** Suggestions of Analysis: The app is integrated with AI to provide suggestions based on the analysis of the sales data to enhance production and sales.
-
 6. **Data export**: The app allows users to export the analyzed data in various formats, such as:
    - Graphs: **JPEG, PNG.**
    - Selected Data: **CSV, ANY SPREADSHEET.**
